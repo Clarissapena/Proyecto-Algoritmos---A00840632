@@ -1,4 +1,4 @@
-# WISE FINANCES
+# WISE FINANCE
 El proyecto que realizare, es el desarrollo de un programa que permita a los usuarios gestionar sus finanzas personales de manera eficiente. Los usuarios podrán registrar sus ingresos y gastos, también asignarán presupuestos mensuales, además establecerán metas de ahorro. Esto ayudara al usuario a obtener un análisis de su comportamiento financiero, ayudándole a notas cuales son sus hábitos de consumo y tomar medidas al respecto para mejorar su estabilidad financiera. 
 
 ## Descripción del avance 1
@@ -26,14 +26,16 @@ Ingreso: Monto de ingreso, su categoría (salario, freelance, etc.), y la fecha.
 Gasto: Monto de gasto, categoría (alimentación, transporte, entretenimiento, etc.), y la fecha.
 
 ## Descripción de las salidas del avance de proyecto
-Escribe aquí la descripción de los resultados de la ejecución de tu programa.
+Las salidas del proyecto en esta fase incluyen:
+Saldo disponible: El saldo que queda después de deducir los gastos de los ingresos.
+Resumen financiero: Listado de ingresos y gastos clasificados por categoría, mostrando el porcentaje de gastos en cada área.
 
 ## Desarrollo de competencias
 
 ### SICT0301: Evalúa los componentes
 #### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
-Escribe aquí tus argumentos sobre por qué consideras que has desarrrollado esta competencia y dónde se puede observar el desarrollo que mencionas.
+Quicksort es un algoritmo de ordenamiento que, en promedio y en el mejor de los casos, tiene una complejidad de O(n log n), ya que divide el arreglo en dos partes y realiza comparaciones en cada nivel. En el peor caso, cuando el pivote elegido es el mayor o menor valor en una lista ya ordenada, su complejidad es O(n²). Además es un algoritmo "in-place", lo que significa que no necesita mucho espacio extra, solo algo de memoria para las llamadas recursivas, con una complejidad espacial de O(log n). Por ellos la elección del algoritmo. 
 
 ### SICT0302: Toma decisiones
 #### Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.
-Escribe aquí tus argumentos sobre por qué consideras que has desarrrollado esta competencia y dónde se puede observar el desarrollo que mencionas.
+En el proyecto se puede ver como se ha implementado en el código de forma correcta, con la función de ordenamiento para los datos de ingresos y gastos., mostrando una lista de transacciones antes y después del ordenamiento. La decisión de usar Quicksort fue la más adecuada para resolver el problema del proyecto, maximizando el rendimiento y minimizando el uso de recursos.
