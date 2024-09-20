@@ -13,12 +13,11 @@ El algoritmo de Quicksort fue seleccionado debido a su eficiencia y capacidad pa
 ## Instrucciones para compilar el avance de proyecto
 Ejecuta el siguiente comando en la terminal:
 
-`g++ main.cpp -o primer_avance` 
+`g++ main.cpp`
 
 ## Instrucciones para ejecutar el avance de proyecto
 Ejecuta el siguiente comando en la terminal:
 
-`g++ main.cpp`
 `./a.out`
 
 ## Descripción de las entradas del avance de proyecto
