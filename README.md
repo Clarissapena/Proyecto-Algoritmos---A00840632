@@ -18,7 +18,8 @@ Ejecuta el siguiente comando en la terminal:
 ## Instrucciones para ejecutar el avance de proyecto
 Ejecuta el siguiente comando en la terminal:
 
-`./primer_avance` 
+`g++ main.cpp`
+`./a.out`
 
 ## Descripción de las entradas del avance de proyecto
 El sistema recibe entradas de datos financieros a través de un archivo CSV o entradas manuales. Las entradas incluyen los siguientes campos:
