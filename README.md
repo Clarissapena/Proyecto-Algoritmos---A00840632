@@ -6,7 +6,7 @@ Lo que se muestra a continuación en este primer avance es como se ha implementa
 En este primer avance, he implementado la funcionalidad básica que permite:
 1. Ingresar datos de ingresos y gastos con sus categorías correspondientes.
 2. Guardar y procesar estas transacciones en una lista.
-3. Utilizar el algoritmo Quicksort para ordenar las transacciones de mayor a menor según el monto.
+3. Utilizar el algoritmo Merge Sort para ordenar las transacciones de mayor a menor según el monto.
 4. Mostrar la lista de transacciones antes y después de ser ordenadas.
 El algoritmo de Quicksort fue seleccionado debido a su eficiencia y capacidad para manejar grandes cantidades de datos, lo que es crucial en la gestión de finanzas personales.
 
@@ -34,8 +34,8 @@ Resumen financiero: Listado de ingresos y gastos clasificados por categoría, mo
 
 ### SICT0301: Evalúa los componentes
 #### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
-Quicksort es un algoritmo de ordenamiento que, en promedio y en el mejor de los casos, tiene una complejidad de O(n log n), ya que divide el arreglo en dos partes y realiza comparaciones en cada nivel. En el peor caso, cuando el pivote elegido es el mayor o menor valor en una lista ya ordenada, su complejidad es O(n²). Además es un algoritmo "in-place", lo que significa que no necesita mucho espacio extra, solo algo de memoria para las llamadas recursivas, con una complejidad espacial de O(log n). Por ellos la elección del algoritmo. 
+Merge Sort tiene una complejidad de O(nlogn) en todos los casos (mejor, promedio y peor), debido a que siempre divide el arreglo en mitades y luego los combina. Es un algoritmo estable, lo que significa que mantiene el orden de elementos iguales, y es ideal para conjuntos de datos grandes y donde se requiere consistencia en el tiempo de ejecución.
 
 ### SICT0302: Toma decisiones
 #### Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.
-En el proyecto se puede ver como se ha implementado en el código de forma correcta, con la función de ordenamiento para los datos de ingresos y gastos., mostrando una lista de transacciones antes y después del ordenamiento. La decisión de usar Quicksort fue la más adecuada para resolver el problema del proyecto, maximizando el rendimiento y minimizando el uso de recursos.
+En el proyecto se puede ver como se ha implementado en el código de forma correcta, con la función de ordenamiento para los datos de ingresos y gastos, mostrando una lista de transacciones antes y después del ordenamiento. La decisión de usar Merge Sort fue la más adecuada para resolver el problema del proyecto, maximizando el rendimiento y minimizando el uso de recursos.
