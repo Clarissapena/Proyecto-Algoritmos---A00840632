@@ -36,7 +36,7 @@ Resumen financiero: Listado de ingresos y gastos clasificados por categoría, mo
 #### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
 Análisis de complejidad de componentes
 #### 1.	Registro de transacciones
-Inserción (addTransaction):
+Inserción (addTransaction)
 Mejor caso: O(1), ya que se agrega la transacción al final de la lista sin necesidad de ajustes.
 Caso promedio y peor caso: O(1), la operación de inserción es constante, ya que siempre se realiza en la misma posición.
 Acceso a transacciones (viewTransactions):
