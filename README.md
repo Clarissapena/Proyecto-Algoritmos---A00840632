@@ -44,12 +44,15 @@ Complejidad: *O(n)*, ya que en todos los casos se recorre la lista de transaccio
 #### 2.	Ordenamiento de transacciones (MergeSort)
 *Complejidad de ordenamiento:*   
 Mejor, promedio y peor caso: *O(n log n)*, MergeSort siempre realiza las operaciones de división y combinación de manera constante, independientemente de la disposición inicial de los datos.   
-Espacio adicional: *O(n)* para almacenar sublistas temporales.
+Elección del algoritmo de ordedamiento:   
+MergeSort tiene una complejidad temporal de *O(n log n)* en el mejor, promedio y peor caso, lo cual es particularmente útil en aplicaciones de finanzas personales, donde el número de transacciones puede crecer considerablemente. Esta eficiencia garantiza que el rendimiento del sistema se mantenga estable incluso con volúmenes elevados de datos.
+A diferencia de algoritmos como QuickSort, cuyo rendimiento puede degradarse en conjuntos de datos que están casi ordenados o presentan un patrón específico, MergeSort mantiene su eficiencia sin importar la disposición inicial de los datos. Esto es útil en Wise Finance, donde las transacciones pueden no seguir un orden particular al ser registradas.   
+MergeSort es la mejor opción para Wise Finance ya que equilibra eficiencia, estabilidad, seguridad en la manipulación de datos y consistencia en el rendimiento, adaptándose bien al entorno de manejo de transacciones financieras.
 #### 3.	Funcionalidades de la clase Meta
 *Cálculo de acumulado (calcularAcumulado)*   
 Complejidad: *O(m)*, donde m es el número de transacciones. La función recorre todas las transacciones para calcular el monto acumulado para una meta específica.   
 *Cálculo de restante (calcularRestante)*   
-Complejidad: *O(1)*, ya que esta función realiza una operación de resta y comparación constante, sin bucles o estructuras adicionales.
+Complejidad: *O(1)*, ya que esta función realiza una operación de resta y comparación constante, sin bucles o estructuras adicionales.   
 *Obtener información de la meta (getDescripcion, getMontoObjetivo)*      
 Complejidad: *O(1)*, cada uno de estos métodos retorna un valor sin procesamiento adicional.
 #### 4.	Visualización de transacciones ordenadas
