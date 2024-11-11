@@ -36,27 +36,27 @@ Resumen financiero: Listado de ingresos y gastos clasificados por categoría, mo
 #### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
 Análisis de complejidad de componentes
 #### 1.	Registro de transacciones
-Inserción (addTransaction):      
-Mejor caso: O(1), ya que se agrega la transacción al final de la lista sin necesidad de ajustes.   
-Caso promedio y peor caso: O(1), la operación de inserción es constante, ya que siempre se realiza en la misma posición.   
-Acceso a transacciones (viewTransactions):   
-Complejidad: O(n), ya que en todos los casos se recorre la lista de transacciones para mostrar cada elemento.
+*Inserción (addTransaction)*      
+Mejor caso: *O(1)*, ya que se agrega la transacción al final de la lista sin necesidad de ajustes.   
+Caso promedio y peor caso: *O(1)*, la operación de inserción es constante, ya que siempre se realiza en la misma posición.   
+*Acceso a transacciones (viewTransactions)*     
+Complejidad: *O(n)*, ya que en todos los casos se recorre la lista de transacciones para mostrar cada elemento.
 #### 2.	Ordenamiento de transacciones (MergeSort)
-Complejidad de ordenamiento:
-Mejor, promedio y peor caso: O(n log n), MergeSort siempre realiza las operaciones de división y combinación de manera constante, independientemente de la disposición inicial de los datos.
-Espacio adicional: O(n) para almacenar sublistas temporales.
+*Complejidad de ordenamiento:*   
+Mejor, promedio y peor caso: *O(n log n)*, MergeSort siempre realiza las operaciones de división y combinación de manera constante, independientemente de la disposición inicial de los datos.   
+Espacio adicional: *O(n)* para almacenar sublistas temporales.
 #### 3.	Funcionalidades de la clase Meta
-Cálculo de acumulado (calcularAcumulado):
-Complejidad: O(m), donde m es el número de transacciones. La función recorre todas las transacciones para calcular el monto acumulado para una meta específica.
-Cálculo de restante (calcularRestante):
-Complejidad: O(1), ya que esta función realiza una operación de resta y comparación constante, sin bucles o estructuras adicionales.
-Obtener información de la meta (getDescripcion, getMontoObjetivo):
-Complejidad: O(1), cada uno de estos métodos retorna un valor sin procesamiento adicional.
+*Cálculo de acumulado (calcularAcumulado)*   
+Complejidad: *O(m)*, donde m es el número de transacciones. La función recorre todas las transacciones para calcular el monto acumulado para una meta específica.   
+*Cálculo de restante (calcularRestante)*   
+Complejidad: *O(1)*, ya que esta función realiza una operación de resta y comparación constante, sin bucles o estructuras adicionales.
+*Obtener información de la meta (getDescripcion, getMontoObjetivo)*      
+Complejidad: *O(1)*, cada uno de estos métodos retorna un valor sin procesamiento adicional.
 #### 4.	Visualización de transacciones ordenadas
-Impresión de lista (printSortedTransactions):
-Complejidad: O(n), recorre toda la lista de transacciones para imprimir cada elemento.
+*Impresión de lista (printSortedTransactions)*   
+Complejidad: *O(n)*, recorre toda la lista de transacciones para imprimir cada elemento.
 #### 5.	Complejidad global del programa
-La complejidad general del programa está dominada por las operaciones de ordenamiento y el cálculo del acumulado para las metas. La complejidad final, considerando el flujo completo, es O(n log n + m), siendo n el número de transacciones y m el número de transacciones relacionadas con metas en el cálculo del acumulado.
+La complejidad general del programa está dominada por las operaciones de ordenamiento y el cálculo del acumulado para las metas. La complejidad final, considerando el flujo completo, es *O(n log n + m)*, siendo n el número de transacciones y m el número de transacciones relacionadas con metas en el cálculo del acumulado.
 
 
 ### SICT0302: Toma decisiones
