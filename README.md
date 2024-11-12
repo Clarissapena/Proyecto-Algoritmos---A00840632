@@ -82,3 +82,18 @@ Para la gestión de metas de ahorro, se implementó la clase Meta, que organiza 
 ##### Meta(const std::string& desc, double monto, const std::string& cat) (Línea 18): Constructor de la clase Meta.   
 ##### double calcularAcumulado(const std::vector<Transaccion>& transacciones) (Líneas 23-29): Método que calcula el monto acumulado.   
 ##### double calcularRestante() const (Líneas 31-35): Método que calcula el monto restante de la meta.   
+
+### SICT0303: Implementa acciones científicas
+#### Uso y Funcionamiento del Árbol Binario en el Código
+El árbol binario que se utiliza en el código es una estructura de datos para almacenar valores de tipo std::string (en este caso, categorías y subcategorías de las transacciones) de manera ordenada. Este árbol permite realizar operaciones de inserción y recorrido en orden, que son útiles para manejar los datos de forma eficiente.
+En el código que has proporcionado, el árbol binario se utiliza en las siguientes funciones:
+##### Obtener categorías únicas ordenadas (obtenerCategorias):
+*Líneas donde se usa el árbol:*   
+Línea 35: ArbolTransacciones arbol; - Se crea una instancia del árbol binario.   
+Línea 37: arbol.insertar(t.categoria); - Las categorías de las transacciones se insertan en el árbol.   
+Línea 40: arbol.obtenerOrdenados(categoriasOrdenadas); - Después de insertar las categorías, se obtienen las categorías ordenadas mediante un recorrido inorden.   
+##### Obtener subcategorías únicas ordenadas (obtenerSubcategorias):
+*Líneas donde se usa el árbol:*   
+Línea 44: ArbolTransacciones arbol; - Se crea una nueva instancia del árbol binario.   
+Línea 46: arbol.insertar(t.subcategoria); - Se insertan las subcategorías de las transacciones en el árbol.   
+Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las subcategorías ordenadas mediante el recorrido inorden.   
