@@ -8,7 +8,6 @@ En este primer avance, he implementado la funcionalidad básica que permite:
 2. Guardar y procesar estas transacciones en una lista.
 3. Utilizar el algoritmo Merge Sort para ordenar las transacciones de mayor a menor según el monto.
 4. Mostrar la lista de transacciones antes y después de ser ordenadas.
-El algoritmo de Quicksort fue seleccionado debido a su eficiencia y capacidad para manejar grandes cantidades de datos, lo que es crucial en la gestión de finanzas personales.
 
 ## Instrucciones para compilar el avance de proyecto
 Ejecuta el siguiente comando en la terminal:
@@ -21,14 +20,13 @@ Ejecuta el siguiente comando en la terminal:
 `./a.out`
 
 ## Descripción de las entradas del avance de proyecto
-El sistema recibe entradas de datos financieros a través de un archivo CSV o entradas manuales. Las entradas incluyen los siguientes campos:
-Ingreso: Monto de ingreso, su categoría (salario, freelance, etc.), y la fecha.
-Gasto: Monto de gasto, categoría (alimentación, transporte, entretenimiento, etc.), y la fecha.
+Para las entradas desde archivos CSV, el sistema puede procesar archivos que contengan múltiples transacciones, donde cada fila del archivo representa una transacción con los siguientes campos: monto, categoría y fecha. El archivo CSV es leído y las transacciones se agregan automáticamente al sistema, facilitando la carga de grandes volúmenes de datos financieros sin necesidad de ingreso manual. Esta funcionalidad ya ha sido implementada y se utiliza un parser que procesa el CSV fila por fila, validando los datos antes de insertarlos en la lista de transacciones. 
 
 ## Descripción de las salidas del avance de proyecto
-Las salidas del proyecto en esta fase incluyen:
-Saldo disponible: El saldo que queda después de deducir los gastos de los ingresos.
-Resumen financiero: Listado de ingresos y gastos clasificados por categoría, mostrando el porcentaje de gastos en cada área.
+El sistema de Wise Finance proporciona un resumen financiero que clasifica los gastos según su categoría y muestra el porcentaje de gasto en cada área. A continuación, se describe el proceso para calcular este porcentaje:   
+**Suma total de los gastos:** El sistema primero calcula el total de todos los gastos registrados por el usuario. Esta suma es la base para determinar qué proporción representa cada categoría sobre el total.   
+**Cálculo del porcentaje por categoría:** Para cada categoría de gasto (como alimentación, transporte, entretenimiento, etc.), se suman todos los montos de las transacciones asociadas. Luego, se calcula el porcentaje de gasto dividiendo el total de cada categoría entre el total de todos los gastos y multiplicando por 100.   
+**Visualización del resumen:** Aunque en esta primera fase el sistema solo muestra los porcentajes en formato de texto, el plan es implementar una visualización gráfica en fases futuras. Las gráficas ayudarán a los usuarios a comprender mejor la distribución de sus gastos. Se prevé el uso de gráficas de barras o gráficas de pastel para mostrar de manera clara y visual qué proporción del presupuesto se gasta en cada categoría.
 
 ## Desarrollo de competencias
 
@@ -104,3 +102,24 @@ Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las su
 #### Complejidad total de las funciones:   
 Para obtenerCategorias y obtenerSubcategorias, las funciones insertan cada categoría o subcategoría en el árbol, lo cual tiene una complejidad de O(n log n) en el mejor de los casos (si el árbol está balanceado). Después, se realiza un recorrido inorden que tiene una complejidad de O(n).
 En el peor caso (si el árbol es muy desbalanceado), la inserción podría ser O(n) para cada transacción, lo que haría que la complejidad de la función sea O(n²).
+Para gestionar las categorías y subcategorías de las transacciones en Wise Finance, se ha implementado un árbol binario. La elección de un árbol binario en lugar de otras estructuras de datos, como un std::set. Porque aunque std::set ofrece una implementación estándar que maneja la mayoría de estos casos, la elección de un árbol binario nos proporciona la flexibilidad y el control necesario para expandir o ajustar la funcionalidad según las demandas del proyecto.
+
+#### Conclusiones
+**1. Análisis y selección de algoritmos adecuados**      
+Uno de los principales aspectos de este proyecto ha sido la elección de algoritmos de ordenamiento eficientes, como MergeSort, que garantizan una buena gestión de grandes volúmenes de datos, manteniendo un rendimiento estable.   
+**2. Estructuración y manejo eficiente de datos**   
+Para gestionar las categorías y subcategorías de las transacciones financieras, se optó por un árbol binario de búsqueda en lugar de otras estructuras como un std::set. La decisión de utilizar un árbol binario fue clave para garantizar flexibilidad y eficiencia al ordenar y recuperar datos, como se menciona en el análisis de complejidad de inserción y recorrido.    
+**3. Integración de diferentes métodos de entrada y salida** 
+El proyecto contempla la posibilidad de ingresar datos tanto de forma manual como desde archivos CSV. Esta funcionalidad demuestra una comprensión del manejo de datos desde diferentes fuentes, lo cual es esencial en proyectos que aspiran a ofrecer flexibilidad al usuario. Además, se ha implementado un sistema de procesamiento para validar y almacenar estos datos correctamente, garantizando que el sistema pueda manejar diferentes tipos de entradas sin afectar su rendimiento o integridad.   
+**4. Organización del proyecto y documentación**   
+El desarrollo de un buen proyecto también se refleja en la organización clara del código y la documentación adecuada. En este caso, se han seguido buenas prácticas de programación, como la separación en módulos y clases para organizar las funcionalidades relacionadas con transacciones y metas financieras. Además, se ha documentado cada una de las decisiones clave del proyecto, explicando el razonamiento detrás de la elección de estructuras de datos y algoritmos, lo que facilita el mantenimiento y la comprensión del sistema por parte de otros desarrolladores o usuarios avanzados.     
+
+Este proyecto de Wise Finance me ha tomado bastante tiempo y dedicación, pero me ha encantado ver cómo va tomando forma. Desde el análisis de las soluciones hasta la implementación de funciones, me he esforzado en cada detalle. He tenido que tomar decisiones importantes sobre qué estructuras de datos y algoritmos usar, y aunque fue un reto, estoy orgullosa del resultado. Siento que el proyecto no solo funciona bien, sino que además es claro y útil para el usuario final, lo cual es muy gratificante.
+
+
+
+
+
+
+
+
