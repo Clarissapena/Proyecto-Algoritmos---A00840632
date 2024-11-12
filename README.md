@@ -97,3 +97,10 @@ Línea 40: arbol.obtenerOrdenados(categoriasOrdenadas); - Después de insertar l
 Línea 44: ArbolTransacciones arbol; - Se crea una nueva instancia del árbol binario.   
 Línea 46: arbol.insertar(t.subcategoria); - Se insertan las subcategorías de las transacciones en el árbol.   
 Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las subcategorías ordenadas mediante el recorrido inorden.   
+#### Análisis de complejidad:   
+**Complejidad de insertar en el árbol:** La inserción en un árbol binario de búsqueda tiene una complejidad de O(log n) en el mejor de los casos (cuando el árbol está balanceado). Sin embargo, si el árbol se desbalancea, la complejidad podría llegar a ser O(n). En el peor caso, cuando el árbol se convierte en una lista enlazada, cada inserción puede tomar O(n).   
+**Recorrido inorden (obtenerOrdenados)**: El recorrido inorden de un árbol binario tiene una complejidad de O(n), donde n es el número de nodos (en este caso, el número de categorías o subcategorías). Esto es porque cada nodo del árbol se visita exactamente una vez durante el recorrido.   
+
+#### Complejidad total de las funciones:   
+Para obtenerCategorias y obtenerSubcategorias, las funciones insertan cada categoría o subcategoría en el árbol, lo cual tiene una complejidad de O(n log n) en el mejor de los casos (si el árbol está balanceado). Después, se realiza un recorrido inorden que tiene una complejidad de O(n).
+En el peor caso (si el árbol es muy desbalanceado), la inserción podría ser O(n) para cada transacción, lo que haría que la complejidad de la función sea O(n²).
