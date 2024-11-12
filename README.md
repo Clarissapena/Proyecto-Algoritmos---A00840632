@@ -70,7 +70,11 @@ Para el proyecto Wise Finance, se utilizó una estructura de lista estándar par
 ##### transacciones.push_back(t); (Líneas 28-33): Se insertan las transacciones en la lista.   
 
 #### Selecciona un algoritmo de ordenamiento adecuado al problema
-Para ordenar las transacciones de manera eficiente, se seleccionó el algoritmo MergeSort. Este algoritmo es adecuado para Wise Finance ya que proporciona un ordenamiento eficiente con una complejidad de O(n log n), independientemente de la disposición inicial de las transacciones. MergeSort es ideal para organizar las transacciones de mayor a menor monto, facilitando así su análisis. Además, al ser un algoritmo estable, garantiza que las transacciones con montos iguales mantengan el orden de ingreso. Las implementaciones del algoritmo se encuentran en el archivo mergesort.h.
+Para ordenar las transacciones de manera eficiente, se seleccionó el algoritmo MergeSort. Este algoritmo es adecuado para Wise Finance ya que proporciona un ordenamiento eficiente con una complejidad de O(n log n), independientemente de la disposición inicial de las transacciones. MergeSort es ideal para organizar las transacciones de mayor a menor monto, facilitando así su análisis. Además, al ser un algoritmo estable, garantiza que las transacciones con montos iguales mantengan el orden de ingreso. Las implementaciones del algoritmo se encuentran en el archivo mergesort.h.   
+##### Llamada a MergeSort para ordenar las transacciones, en la línea 452 del main, donde se ordenan las transacciones antes de mostrarlas:
+mergeSort(transacciones, 0, transacciones.size() - 1);
+##### Además, el ordenamiento para visualizar ingresos se realiza en Línea 382 dentro de la función visualizarIngresos:
+mergeSort(ingresos, 0, ingresos.size() - 1);
 
 #### Usa una clase adecuada para manejar metas financieras
 Para la gestión de metas de ahorro, se implementó la clase Meta, que organiza cada meta como un objeto separado con propiedades de descripción, monto objetivo y monto acumulado. Esta clase permite calcular el progreso de cada meta a partir de las transacciones asociadas, brindando una manera clara y estructurada de manejar y actualizar el avance de las metas. La clase Meta y sus métodos para calcular el acumulado y el monto restante se encuentran en meta.h.
