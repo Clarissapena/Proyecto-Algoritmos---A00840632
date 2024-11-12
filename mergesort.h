@@ -1,15 +1,8 @@
 #ifndef MERGESORT_H
 #define MERGESORT_H
-#include <vector>
-#include <string>
 
-// Estructura para almacenar cada transacción (ingresos y gastos)
-struct Transaccion {
-    double monto;
-    std::string categoria;
-    std::string tipo;
-    std::string fecha;
-};
+#include <vector>
+#include "transaccion.h"  // Incluir la estructura Transaccion
 
 // Función para combinar dos sub-vectores
 void merge(std::vector<Transaccion>& transacciones, int izquierda, int mitad, int derecha) {
@@ -29,7 +22,7 @@ void merge(std::vector<Transaccion>& transacciones, int izquierda, int mitad, in
     // Mezclar los vectores temporales de nuevo en transacciones[izquierda..derecha]
     int i = 0, j = 0, k = izquierda;
     while (i < n1 && j < n2) {
-        if (izquierdaTrans[i].monto >= derechaTrans[j].monto) {
+        if (izquierdaTrans[i].monto <= derechaTrans[j].monto) {  // Orden ascendente
             transacciones[k] = izquierdaTrans[i];
             i++;
         } else {
@@ -68,3 +61,4 @@ void mergeSort(std::vector<Transaccion>& transacciones, int izquierda, int derec
 }
 
 #endif // MERGESORT_H
+
