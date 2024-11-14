@@ -16,7 +16,7 @@ Ejecuta el siguiente comando en la terminal:
 
 ## Instrucciones para ejecutar el avance de proyecto
 Ejecuta el siguiente comando en la terminal:
-
+g++ -std=c++11 main.cpp
 `./a.out`
 
 ## Descripción de las entradas del avance de proyecto
