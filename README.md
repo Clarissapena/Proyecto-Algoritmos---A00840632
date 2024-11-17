@@ -9,11 +9,6 @@ En este primer avance, he implementado la funcionalidad básica que permite:
 3. Utilizar el algoritmo Merge Sort para ordenar las transacciones de mayor a menor según el monto.
 4. Mostrar la lista de transacciones antes y después de ser ordenadas.
 
-## Instrucciones para compilar el avance de proyecto
-Ejecuta el siguiente comando en la terminal:
-
-`g++ main.cpp`
-
 ## Instrucciones para ejecutar el avance de proyecto
 Ejecuta el siguiente comando en la terminal:
 g++ -std=c++11 main.cpp
@@ -55,8 +50,12 @@ Complejidad: *O(1)*, ya que esta función realiza una operación de resta y comp
 Complejidad: *O(1)*, cada uno de estos métodos retorna un valor sin procesamiento adicional.
 #### 4.	Visualización de transacciones ordenadas
 *Impresión de lista (printSortedTransactions)*   
-Complejidad: *O(n)*, recorre toda la lista de transacciones para imprimir cada elemento.
-#### 5.	Complejidad global del programa
+Complejidad: *O(n)*, recorre toda la lista de transacciones para imprimir cada elemento. 
+#### 5. Complejidad de insertar en el árbol:
+La inserción en un árbol binario de búsqueda tiene una complejidad de O(log n) en el mejor de los casos (cuando el árbol está balanceado). Sin embargo, si el árbol se desbalancea, la complejidad podría llegar a ser O(n). En el peor caso, cuando el árbol se convierte en una lista enlazada, cada inserción puede tomar O(n).   
+**Recorrido inorden (obtenerOrdenados)**: El recorrido inorden de un árbol binario tiene una complejidad de O(n), donde n es el número de nodos (en este caso, el número de categorías o subcategorías). Esto es porque cada nodo del árbol se visita exactamente una vez durante el recorrido.   
+
+#### 6.	Complejidad global del programa
 La complejidad general del programa está dominada por las operaciones de ordenamiento y el cálculo del acumulado para las metas. La complejidad final, considerando el flujo completo, es *O(n log n + m)*, siendo n el número de transacciones y m el número de transacciones relacionadas con metas en el cálculo del acumulado.
 
 
@@ -95,9 +94,7 @@ Línea 40: arbol.obtenerOrdenados(categoriasOrdenadas); - Después de insertar l
 Línea 44: ArbolTransacciones arbol; - Se crea una nueva instancia del árbol binario.   
 Línea 46: arbol.insertar(t.subcategoria); - Se insertan las subcategorías de las transacciones en el árbol.   
 Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las subcategorías ordenadas mediante el recorrido inorden.   
-#### Análisis de complejidad:   
-**Complejidad de insertar en el árbol:** La inserción en un árbol binario de búsqueda tiene una complejidad de O(log n) en el mejor de los casos (cuando el árbol está balanceado). Sin embargo, si el árbol se desbalancea, la complejidad podría llegar a ser O(n). En el peor caso, cuando el árbol se convierte en una lista enlazada, cada inserción puede tomar O(n).   
-**Recorrido inorden (obtenerOrdenados)**: El recorrido inorden de un árbol binario tiene una complejidad de O(n), donde n es el número de nodos (en este caso, el número de categorías o subcategorías). Esto es porque cada nodo del árbol se visita exactamente una vez durante el recorrido.   
+
 
 #### Complejidad total de las funciones:   
 Para obtenerCategorias y obtenerSubcategorias, las funciones insertan cada categoría o subcategoría en el árbol, lo cual tiene una complejidad de O(n log n) en el mejor de los casos (si el árbol está balanceado). Después, se realiza un recorrido inorden que tiene una complejidad de O(n).
