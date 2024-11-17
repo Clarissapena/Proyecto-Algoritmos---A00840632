@@ -27,8 +27,9 @@ El sistema de Wise Finance proporciona un resumen financiero que clasifica los g
 
 ### SICT0301: Evalúa los componentes
 #### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
-Análisis de complejidad de componentes
-#### 1.	Registro de transacciones
+Aquí veremos la complejidad de las funcionalidades más importantes de mi proyecto :)
+#### 1.	La complejidad al hacer el registro de transacciones
+He almacenando las transacciones en una estructura de lista doblemente enlazada (Transaccion con punteros siguiente y anterior), lo cual fue una buena elección porque necesito navegar tanto hacia adelante como hacia atrás a través de las transacciones.
 *Inserción (addTransaction)*      
 Mejor caso: *O(1)*, ya que se agrega la transacción al final de la lista sin necesidad de ajustes.   
 Caso promedio y peor caso: *O(1)*, la operación de inserción es constante, ya que siempre se realiza en la misma posición.   
@@ -41,7 +42,7 @@ Elección del algoritmo de ordedamiento:
 MergeSort tiene una complejidad temporal de *O(n log n)* en el mejor, promedio y peor caso, lo cual es particularmente útil en aplicaciones de finanzas personales, donde el número de transacciones puede crecer considerablemente. Esta eficiencia garantiza que el rendimiento del sistema se mantenga estable incluso con volúmenes elevados de datos.
 A diferencia de algoritmos como QuickSort, cuyo rendimiento puede degradarse en conjuntos de datos que están casi ordenados o presentan un patrón específico, MergeSort mantiene su eficiencia sin importar la disposición inicial de los datos. Esto es útil en Wise Finance, donde las transacciones pueden no seguir un orden particular al ser registradas.   
 MergeSort es la mejor opción para Wise Finance ya que equilibra eficiencia, estabilidad, seguridad en la manipulación de datos y consistencia en el rendimiento, adaptándose bien al entorno de manejo de transacciones financieras.
-#### 3.	Funcionalidades de la clase Meta
+#### 3.	La complejidad de mi clase Meta
 *Cálculo de acumulado (calcularAcumulado)*   
 Complejidad: *O(m)*, donde m es el número de transacciones. La función recorre todas las transacciones para calcular el monto acumulado para una meta específica.   
 *Cálculo de restante (calcularRestante)*   
@@ -61,13 +62,14 @@ La complejidad general del programa está dominada por las operaciones de ordena
 
 ### SICT0302: Toma decisiones
 #### Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.
-Para ordenar las transacciones de manera eficiente, se seleccionó el algoritmo MergeSort. Este algoritmo es adecuado para Wise Finance ya que proporciona un ordenamiento eficiente con una complejidad de O(n log n), independientemente de la disposición inicial de las transacciones. MergeSort es ideal para organizar las transacciones de mayor a menor monto, facilitando así su análisis. Además, al ser un algoritmo estable, garantiza que las transacciones con montos iguales mantengan el orden de ingreso. Las implementaciones del algoritmo se encuentran en el archivo mergesort.h.   
+Para ordenar las transacciones de manera eficiente, se seleccionó el algoritmo MergeSort. Este algoritmo es adecuado para Wise Finance ya que me proporciona un ordenamiento con una complejidad de O(n log n), independientemente de la disposición inicial de las transacciones. Las implementaciones del algoritmo se encuentran en el archivo mergesort.h.   
 ##### Llamada a MergeSort para ordenar las transacciones, en la línea 452 del main, donde se ordenan las transacciones antes de mostrarlas:
 mergeSort(transacciones, 0, transacciones.size() - 1);
 ##### Además, el ordenamiento para visualizar ingresos se realiza en Línea 382 dentro de la función visualizarIngresos:
 mergeSort(ingresos, 0, ingresos.size() - 1);   
 
-Para el proyecto Wise Finance, se utilizó una estructura de lista estándar para almacenar las transacciones de ingresos y gastos. Esta lista permite agregar transacciones en el orden en que son registradas y acceder a ellas en secuencia para su análisis y visualización. La estructura es adecuada para almacenar transacciones debido a su flexibilidad y facilidad de manipulación, ya que la adición y el acceso a los datos financieros se realizan en tiempo constante, O(1). Las funciones de inserción y visualización de transacciones se encuentran en el archivo main.cpp en las líneas correspondientes.
+#### Mi lista estándar para almacenar las transacciones
+Utilicé una estructura de lista estándar para almacenar las transacciones de ingresos y gastos. Esta lista permite agregar transacciones en el orden en que son registradas y acceder a ellas en secuencia para su análisis y visualización. La estructura es adecuada para almacenar transacciones debido a su flexibilidad y facilidad de manipulación, ya que la adición y el acceso a los datos financieros se realizan en tiempo constante, O(1). Las funciones de inserción y visualización de transacciones se encuentran en el archivo main.cpp en las líneas correspondientes.
 ##### Líneas relevantes:   
 ##### std::vector<Transaccion> transacciones; (Línea 16): Aquí se declara la lista de transacciones.   
 ##### transacciones.push_back(t); (Líneas 28-33): Se insertan las transacciones en la lista.   
@@ -79,6 +81,19 @@ Para la gestión de metas de ahorro, se implementó la clase Meta, que organiza 
 ##### double calcularAcumulado(const std::vector<Transaccion>& transacciones) (Líneas 23-29): Método que calcula el monto acumulado.   
 ##### double calcularRestante() const (Líneas 31-35): Método que calcula el monto restante de la meta.   
 
+#### Ordenamineto de las transacciones por categoría
+Utilicé un árbol binario (ArbolTransacciones) para almacenar y ordenar categorías y subcategorías es un enfoque eficaz para garantizar la unicidad y la fácil navegación.
+Mi árbol contiene lo siguiente: 
+Cada nodo del árbol contiene:
+valor: una cadena de texto que representa la categoría o subcategoría.
+izquierda y derecha: punteros a los nodos hijos izquierdo y derecho, respectivamente.
+Y estás son las funciones más importantes: 
+*Insertar categorías y subcategorías:* Cada vez que se añade una transacción, se extraen su categoría o subcategoría y se insertan en el árbol correspondiente.   
+Esto se encuentra en las líneas del código: 10 - 30 
+*Obtener las categorías y subcategorías ordenadas:* Para mostrar las categorías o subcategorías de las transacciones ordenadas, el programa llama a la función obtenerOrdenados, que recorre el árbol en orden y las almacena en un vector. Esto permite que las categorías o subcategorías se muestren de forma ordenada.
+Esto se encuentra en las líneas del código: 10 - 60
+*Filtrado por categorías o subcategorías:* En la función visualizarGastos, se pueden mostrar los gastos por categoría o subcategoría. El árbol binario se utiliza para obtener las categorías y subcategorías únicas y ordenadas, y luego se filtran las transacciones según la opción seleccionada por el usuario.   
+Esto se encuentra en las líneas del código del main: 90 - 135
 
 ### SICT0303: Implementa acciones científicas
 #### Uso y Funcionamiento del Árbol Binario en el Código
