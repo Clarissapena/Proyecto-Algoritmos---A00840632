@@ -60,25 +60,25 @@ La complejidad general del programa está dominada por las operaciones de ordena
 
 
 ### SICT0302: Toma decisiones
-#### Selecciona y usa una estructura lineal adecuada al problema
+#### Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.
+Para ordenar las transacciones de manera eficiente, se seleccionó el algoritmo MergeSort. Este algoritmo es adecuado para Wise Finance ya que proporciona un ordenamiento eficiente con una complejidad de O(n log n), independientemente de la disposición inicial de las transacciones. MergeSort es ideal para organizar las transacciones de mayor a menor monto, facilitando así su análisis. Además, al ser un algoritmo estable, garantiza que las transacciones con montos iguales mantengan el orden de ingreso. Las implementaciones del algoritmo se encuentran en el archivo mergesort.h.   
+##### Llamada a MergeSort para ordenar las transacciones, en la línea 452 del main, donde se ordenan las transacciones antes de mostrarlas:
+mergeSort(transacciones, 0, transacciones.size() - 1);
+##### Además, el ordenamiento para visualizar ingresos se realiza en Línea 382 dentro de la función visualizarIngresos:
+mergeSort(ingresos, 0, ingresos.size() - 1);   
+
 Para el proyecto Wise Finance, se utilizó una estructura de lista estándar para almacenar las transacciones de ingresos y gastos. Esta lista permite agregar transacciones en el orden en que son registradas y acceder a ellas en secuencia para su análisis y visualización. La estructura es adecuada para almacenar transacciones debido a su flexibilidad y facilidad de manipulación, ya que la adición y el acceso a los datos financieros se realizan en tiempo constante, O(1). Las funciones de inserción y visualización de transacciones se encuentran en el archivo main.cpp en las líneas correspondientes.
 ##### Líneas relevantes:   
 ##### std::vector<Transaccion> transacciones; (Línea 16): Aquí se declara la lista de transacciones.   
 ##### transacciones.push_back(t); (Líneas 28-33): Se insertan las transacciones en la lista.   
 
-#### Selecciona un algoritmo de ordenamiento adecuado al problema
-Para ordenar las transacciones de manera eficiente, se seleccionó el algoritmo MergeSort. Este algoritmo es adecuado para Wise Finance ya que proporciona un ordenamiento eficiente con una complejidad de O(n log n), independientemente de la disposición inicial de las transacciones. MergeSort es ideal para organizar las transacciones de mayor a menor monto, facilitando así su análisis. Además, al ser un algoritmo estable, garantiza que las transacciones con montos iguales mantengan el orden de ingreso. Las implementaciones del algoritmo se encuentran en el archivo mergesort.h.   
-##### Llamada a MergeSort para ordenar las transacciones, en la línea 452 del main, donde se ordenan las transacciones antes de mostrarlas:
-mergeSort(transacciones, 0, transacciones.size() - 1);
-##### Además, el ordenamiento para visualizar ingresos se realiza en Línea 382 dentro de la función visualizarIngresos:
-mergeSort(ingresos, 0, ingresos.size() - 1);
-
-#### Usa una clase adecuada para manejar metas financieras
+#### Mi clase para manejar las metas financieras
 Para la gestión de metas de ahorro, se implementó la clase Meta, que organiza cada meta como un objeto separado con propiedades de descripción, monto objetivo y monto acumulado. Esta clase permite calcular el progreso de cada meta a partir de las transacciones asociadas, brindando una manera clara y estructurada de manejar y actualizar el avance de las metas. La clase Meta y sus métodos para calcular el acumulado y el monto restante se encuentran en meta.h.
 ##### Líneas relevantes en meta.h:   
 ##### Meta(const std::string& desc, double monto, const std::string& cat) (Línea 18): Constructor de la clase Meta.   
 ##### double calcularAcumulado(const std::vector<Transaccion>& transacciones) (Líneas 23-29): Método que calcula el monto acumulado.   
 ##### double calcularRestante() const (Líneas 31-35): Método que calcula el monto restante de la meta.   
+
 
 ### SICT0303: Implementa acciones científicas
 #### Uso y Funcionamiento del Árbol Binario en el Código
@@ -96,10 +96,6 @@ Línea 46: arbol.insertar(t.subcategoria); - Se insertan las subcategorías de l
 Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las subcategorías ordenadas mediante el recorrido inorden.   
 
 
-#### Complejidad total de las funciones:   
-Para obtenerCategorias y obtenerSubcategorias, las funciones insertan cada categoría o subcategoría en el árbol, lo cual tiene una complejidad de O(n log n) en el mejor de los casos (si el árbol está balanceado). Después, se realiza un recorrido inorden que tiene una complejidad de O(n).
-En el peor caso (si el árbol es muy desbalanceado), la inserción podría ser O(n) para cada transacción, lo que haría que la complejidad de la función sea O(n²).
-Para gestionar las categorías y subcategorías de las transacciones en Wise Finance, se ha implementado un árbol binario. La elección de un árbol binario en lugar de otras estructuras de datos, como un std::set. Porque aunque std::set ofrece una implementación estándar que maneja la mayoría de estos casos, la elección de un árbol binario nos proporciona la flexibilidad y el control necesario para expandir o ajustar la funcionalidad según las demandas del proyecto.
 
 #### Conclusiones
 **1. Análisis y selección de algoritmos adecuados**      
