@@ -110,7 +110,8 @@ Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las su
 
 ### SICT0303: Implementa acciones científicas
 #### Mi lectura de archivos
-Decicí utilizar un vector para almacenar las transacciones porque es una solución simple y clara. Los vectores son fáciles de usar y proporcionan un acceso rápido y eficiente a los elementos, lo que hace que el código sea más legible y fácil de mantener. Esto se puede ver en las líneas 13 a 88 del archivo main.cpp.   
+Decicí utilizar un vector para almacenar las transacciones porque es una solución simple y clara. Los vectores son fáciles de usar y proporcionan un acceso rápido y eficiente a los elementos, lo que hace que el código sea más legible y fácil de mantener. Esto se puede ver en las líneas 13 a 88 del archivo main.cpp. 
+Las funciones leerDatos y leerMetas leen datos desde archivos para cargarlos. Ambas funciones abren un archivo en modo lectura y leen línea por línea. En leerDatos, se extraen y convierten los valores de las transacciones (como monto, categoría y fecha) y se almacenan en un vector de objetos Transaccion. En leerMetas, se procesan las metas de ahorro (como descripción, monto objetivo y categoría) y se almacenan en un vector de objetos Meta. Los datos se dividen usando un delimitador (como la coma) y se convierten a los tipos adecuados. Estas funciones permiten persistir los datos entre ejecuciones del programa.
 En el caso del Arbolbinario funciona de la siguiente manera:   
 La lectura de las transacciones se hace a través de las funciones obtenerCategorias y obtenerSubcategorias.   
 Estas funciones reciben un vector de transacciones, iteran sobre ellas y insertan las categorías o subcategorías en un árbol binario.   
