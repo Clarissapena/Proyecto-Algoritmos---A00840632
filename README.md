@@ -83,10 +83,10 @@ Para la gestión de metas de ahorro, se implementó la clase Meta, que organiza 
 
 #### Ordenamineto de las transacciones por categoría
 Utilicé un árbol binario (ArbolTransacciones) para almacenar y ordenar categorías y subcategorías es un enfoque eficaz para garantizar la unicidad y la fácil navegación.
-Mi árbol contiene lo siguiente: 
-Cada nodo del árbol contiene:
-valor: una cadena de texto que representa la categoría o subcategoría.
-izquierda y derecha: punteros a los nodos hijos izquierdo y derecho, respectivamente.
+Mi árbol contiene lo siguiente:   
+Cada nodo del árbol contiene:   
+valor: una cadena de texto que representa la categoría o subcategoría.   
+izquierda y derecha: punteros a los nodos hijos izquierdo y derecho, respectivamente.   
 Y estás son las funciones más importantes:    
 *Insertar categorías y subcategorías:* Cada vez que se añade una transacción, se extraen su categoría o subcategoría y se insertan en el árbol correspondiente.      
 Esto se encuentra en las líneas del código: 10 - 30    
