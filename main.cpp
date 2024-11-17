@@ -62,7 +62,7 @@ std::vector<Meta> leerMetas(const std::string& nombreArchivo) {
     std::string linea;
 
     while (std::getline(archivo, linea)) {
-        std::istringstream iss(linea);
+        std::string iss(linea);
         std::string descripcion, categoria;
         double monto;
 
