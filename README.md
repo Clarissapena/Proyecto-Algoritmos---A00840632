@@ -87,13 +87,13 @@ Mi árbol contiene lo siguiente:
 Cada nodo del árbol contiene:
 valor: una cadena de texto que representa la categoría o subcategoría.
 izquierda y derecha: punteros a los nodos hijos izquierdo y derecho, respectivamente.
-Y estás son las funciones más importantes: 
-*Insertar categorías y subcategorías:* Cada vez que se añade una transacción, se extraen su categoría o subcategoría y se insertan en el árbol correspondiente.   
-Esto se encuentra en las líneas del código: 10 - 30 
-*Obtener las categorías y subcategorías ordenadas:* Para mostrar las categorías o subcategorías de las transacciones ordenadas, el programa llama a la función obtenerOrdenados, que recorre el árbol en orden y las almacena en un vector. Esto permite que las categorías o subcategorías se muestren de forma ordenada.
-Esto se encuentra en las líneas del código: 10 - 60
+Y estás son las funciones más importantes:    
+*Insertar categorías y subcategorías:* Cada vez que se añade una transacción, se extraen su categoría o subcategoría y se insertan en el árbol correspondiente.      
+Esto se encuentra en las líneas del código: 10 - 30    
+*Obtener las categorías y subcategorías ordenadas:* Para mostrar las categorías o subcategorías de las transacciones ordenadas, el programa llama a la función obtenerOrdenados, que recorre el árbol en orden y las almacena en un vector. Esto permite que las categorías o subcategorías se muestren de forma ordenada.   
+Esto se encuentra en las líneas del código: 10 - 60   
 *Filtrado por categorías o subcategorías:* En la función visualizarGastos, se pueden mostrar los gastos por categoría o subcategoría. El árbol binario se utiliza para obtener las categorías y subcategorías únicas y ordenadas, y luego se filtran las transacciones según la opción seleccionada por el usuario.   
-Esto se encuentra en las líneas del código del main: 90 - 135
+Esto se encuentra en las líneas del código del main: 90 - 135   
 
 ### SICT0303: Implementa acciones científicas
 #### Uso y Funcionamiento del Árbol Binario en el Código
