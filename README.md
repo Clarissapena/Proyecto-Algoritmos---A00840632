@@ -28,7 +28,7 @@ El sistema de Wise Finance proporciona un resumen financiero que clasifica los g
 ### SICT0301: Evalúa los componentes
 #### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
 Aquí veremos la complejidad de las funcionalidades más importantes de mi proyecto :)
-#### 1.	La complejidad al hacer el registro de transacciones
+#### 1.	La complejidad al hacer el registro de transacciones y el uso de mi lista
 Lectura del archivo:   
 El bucle while (std::getline(inputFile, line)) recorre el archivo línea por línea.   
 La complejidad total del proceso (lectura) a O(n log n) en la práctica.
@@ -110,7 +110,13 @@ Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las su
 
 ### SICT0303: Implementa acciones científicas
 #### Mi lectura de archivos
-Decicí utilizar un vector para almacenar las transacciones porque es una solución simple y clara. Los vectores son fáciles de usar y proporcionan un acceso rápido y eficiente a los elementos, lo que hace que el código sea más legible y fácil de mantener. Esto se puede ver en las líneas 13 a 88 del archivo main.cpp.
+Decicí utilizar un vector para almacenar las transacciones porque es una solución simple y clara. Los vectores son fáciles de usar y proporcionan un acceso rápido y eficiente a los elementos, lo que hace que el código sea más legible y fácil de mantener. Esto se puede ver en las líneas 13 a 88 del archivo main.cpp.   
+En el caso del Arbolbinario funciona de la siguiente manera:   
+La lectura de las transacciones se hace a través de las funciones obtenerCategorias y obtenerSubcategorias.   
+Estas funciones reciben un vector de transacciones, iteran sobre ellas y insertan las categorías o subcategorías en un árbol binario.   
+Y en el caso de MergeSort:   
+La lectura de las transacciones en este caso se realiza en la función visualizarIngresos, donde primero se filtran las transacciones de tipo "ingreso" y se almacenan en un vector llamado ingresos.
+Luego, el vector de ingresos es ordenado usando el algoritmo de MergeSort. La función mergeSort es llamada con el vector de transacciones, y divide recursivamente el vector en mitades más pequeñas para luego combinar las mitades de manera ordenada utilizando la función merge.
 #### Uso y Funcionamiento del Árbol Binario en el Código
 El árbol binario que se utiliza en el código es una estructura de datos para almacenar valores de tipo std::string (en este caso, categorías y subcategorías de las transacciones) de manera ordenada. Este árbol permite realizar operaciones de inserción y recorrido en orden, que son útiles para manejar los datos de forma eficiente.
 #### Mi escritura de archivos: 
