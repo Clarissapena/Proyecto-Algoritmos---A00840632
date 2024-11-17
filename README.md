@@ -29,6 +29,9 @@ El sistema de Wise Finance proporciona un resumen financiero que clasifica los g
 #### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
 Aquí veremos la complejidad de las funcionalidades más importantes de mi proyecto :)
 #### 1.	La complejidad al hacer el registro de transacciones
+Lectura del archivo:   
+El bucle while (std::getline(inputFile, line)) recorre el archivo línea por línea.   
+La complejidad total del proceso (lectura) a O(n log n) en la práctica.
 He almacenando las transacciones en una estructura de lista doblemente enlazada (Transaccion con punteros siguiente y anterior), lo cual fue una buena elección porque necesito navegar tanto hacia adelante como hacia atrás a través de las transacciones.
 *Inserción (addTransaction)*      
 Mejor caso: *O(1)*, ya que se agrega la transacción al final de la lista sin necesidad de ajustes.   
@@ -93,12 +96,7 @@ Esto se encuentra en las líneas del código: 10 - 30
 *Obtener las categorías y subcategorías ordenadas:* Para mostrar las categorías o subcategorías de las transacciones ordenadas, el programa llama a la función obtenerOrdenados, que recorre el árbol en orden y las almacena en un vector. Esto permite que las categorías o subcategorías se muestren de forma ordenada.   
 Esto se encuentra en las líneas del código: 10 - 60   
 *Filtrado por categorías o subcategorías:* En la función visualizarGastos, se pueden mostrar los gastos por categoría o subcategoría. El árbol binario se utiliza para obtener las categorías y subcategorías únicas y ordenadas, y luego se filtran las transacciones según la opción seleccionada por el usuario.   
-Esto se encuentra en las líneas del código del main: 90 - 135   
-
-### SICT0303: Implementa acciones científicas
-#### Uso y Funcionamiento del Árbol Binario en el Código
-El árbol binario que se utiliza en el código es una estructura de datos para almacenar valores de tipo std::string (en este caso, categorías y subcategorías de las transacciones) de manera ordenada. Este árbol permite realizar operaciones de inserción y recorrido en orden, que son útiles para manejar los datos de forma eficiente.
-En el código que has proporcionado, el árbol binario se utiliza en las siguientes funciones:
+Esto se encuentra en las líneas del código del main: 90 - 135  
 ##### Obtener categorías únicas ordenadas (obtenerCategorias):
 *Líneas donde se usa el árbol:*   
 Línea 35: ArbolTransacciones arbol; - Se crea una instancia del árbol binario.   
@@ -110,7 +108,16 @@ Línea 44: ArbolTransacciones arbol; - Se crea una nueva instancia del árbol bi
 Línea 46: arbol.insertar(t.subcategoria); - Se insertan las subcategorías de las transacciones en el árbol.   
 Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las subcategorías ordenadas mediante el recorrido inorden.   
 
-
+### SICT0303: Implementa acciones científicas
+#### Mi lectura de archivos
+Decicí utilizar un vector para almacenar las transacciones porque es una solución simple y clara. Los vectores son fáciles de usar y proporcionan un acceso rápido y eficiente a los elementos, lo que hace que el código sea más legible y fácil de mantener. Esto se puede ver en las líneas 13 a 88 del archivo main.cpp.
+#### Uso y Funcionamiento del Árbol Binario en el Código
+El árbol binario que se utiliza en el código es una estructura de datos para almacenar valores de tipo std::string (en este caso, categorías y subcategorías de las transacciones) de manera ordenada. Este árbol permite realizar operaciones de inserción y recorrido en orden, que son útiles para manejar los datos de forma eficiente.
+#### Mi escritura de archivos: 
+En términos de escritura de archivos, se está utilizando la clase std::ofstream para generar un reporte anual de gastos e ingresos.   
+Primero, necesité una función que filtra los ingresos y los ordena antes de escribirlos en el archivo.
+Esto se puede ver mostrado de la 327 - 361
+Ahora, el código recorre el vector gastos, que contiene todas las transacciones filtradas y ordenadas, y escribe la información de cada transacción en el archivo.
 
 #### Conclusiones
 **1. Análisis y selección de algoritmos adecuados**      
