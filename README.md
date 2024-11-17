@@ -51,7 +51,7 @@ Complejidad: *O(1)*, cada uno de estos métodos retorna un valor sin procesamien
 #### 4.	Visualización de transacciones ordenadas
 *Impresión de lista (printSortedTransactions)*   
 Complejidad: *O(n)*, recorre toda la lista de transacciones para imprimir cada elemento. 
-#### 5. Complejidad de insertar en el árbol:
+#### 5. Complejidad de mi arbol binario:
 La inserción en un árbol binario de búsqueda tiene una complejidad de O(log n) en el mejor de los casos (cuando el árbol está balanceado). Sin embargo, si el árbol se desbalancea, la complejidad podría llegar a ser O(n). En el peor caso, cuando el árbol se convierte en una lista enlazada, cada inserción puede tomar O(n).   
 **Recorrido inorden (obtenerOrdenados)**: El recorrido inorden de un árbol binario tiene una complejidad de O(n), donde n es el número de nodos (en este caso, el número de categorías o subcategorías). Esto es porque cada nodo del árbol se visita exactamente una vez durante el recorrido.   
 
