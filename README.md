@@ -38,15 +38,15 @@ MergeSort tiene una complejidad temporal de *O(n log n)* en el mejor, promedio y
 A diferencia de algoritmos como QuickSort, cuyo rendimiento puede degradarse en conjuntos de datos que están casi ordenados o presentan un patrón específico, MergeSort mantiene su eficiencia sin importar la disposición inicial de los datos. Esto es útil en Wise Finance, donde las transacciones pueden no seguir un orden particular al ser registradas.   
 
 #### 2. Complejidad de mi arbol binario:
-*Función insertar* :flower:     
+*Función insertar* 🌸     
 **Mejor caso (O(log n)):** El árbol está balanceado, por lo que se recorre solo hasta la mitad de los nodos en cada nivel.   
 **Promedio (O(log n)):** El árbol está medianamente balanceado.   
 **Peor caso (O(n)):** El árbol está desbalanceado (se convierte en lista), y hay que recorrer todos los nodos.   
-*Función inorden* :flower:   
+*Función inorden* 🌸    
 **Mejor, Promedio y Peor caso (O(n)):** Se deben visitar todos los nodos del árbol en un recorrido en inorden, independientemente de su estructura.   
-*Función obtenerOrdenados* :flower:    
+*Función obtenerOrdenados* 🌸    
 **Mejor, Promedio y Peor caso (O(n)):** Similar a inorden, recorre todo el árbol para almacenar los valores en un vector.   
-*Funciones Recursivas Internas* :flower:   
+*Funciones Recursivas Internas* 🌸   
 Las funciones recursivas internas son las que implementan la lógica de las funciones principales.    
 **insertarRecursivo:** La complejidad temporal de esta función depende de la altura del árbol. En el mejor caso, es O(log n) (cuando el árbol está balanceado), en el peor caso es O(n) (cuando el árbol está desbalanceado), y en el caso promedio es O(log n) (cuando el árbol está medianamente balanceado).   
 **inordenRecursivo y obtenerOrdenadosRecursivo:** Ambas funciones recorren todo el árbol. Dado que en cada uno de los casos se visitan todos los nodos, la complejidad temporal de ambas es siempre O(n) en el mejor, peor y caso promedio.
