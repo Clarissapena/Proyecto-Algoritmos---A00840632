@@ -46,6 +46,10 @@ A diferencia de algoritmos como QuickSort, cuyo rendimiento puede degradarse en 
 **Mejor, Promedio y Peor caso (O(n)):** Se deben visitar todos los nodos del árbol en un recorrido en inorden, independientemente de su estructura.   
 *Función obtenerOrdenados*   
 **Mejor, Promedio y Peor caso (O(n)):** Similar a inorden, recorre todo el árbol para almacenar los valores en un vector.   
+*Funciones Recursivas Internas*   
+Las funciones recursivas internas son las que implementan la lógica de las funciones principales.    
+insertarRecursivo: La complejidad temporal de esta función depende de la altura del árbol. En el mejor caso, es O(log n) (cuando el árbol está balanceado), en el peor caso es O(n) (cuando el árbol está desbalanceado), y en el caso promedio es O(log n) (cuando el árbol está medianamente balanceado).   
+inordenRecursivo y obtenerOrdenadosRecursivo: Ambas funciones recorren todo el árbol. Dado que en cada uno de los casos se visitan todos los nodos, la complejidad temporal de ambas es siempre O(n) en el mejor, peor y caso promedio. La diferencia es el uso de memoria (la pila de recursión) que puede variar dependiendo de la altura del árbol (O(h)).
 
 #### Complejidad de las funciones de mi programa :rocket:  
 #### 1.	La complejidad al hacer el registro de transacciones y el uso de mi lista
