@@ -36,17 +36,16 @@ Mejor, promedio y peor caso: *O(n log n)*, MergeSort siempre realiza las operaci
 Elección del algoritmo de ordedamiento:   
 MergeSort tiene una complejidad temporal de *O(n log n)* en el mejor, promedio y peor caso, lo cual es particularmente útil en aplicaciones de finanzas personales, donde el número de transacciones puede crecer considerablemente. Esta eficiencia garantiza que el rendimiento del sistema se mantenga estable incluso con volúmenes elevados de datos.
 A diferencia de algoritmos como QuickSort, cuyo rendimiento puede degradarse en conjuntos de datos que están casi ordenados o presentan un patrón específico, MergeSort mantiene su eficiencia sin importar la disposición inicial de los datos. Esto es útil en Wise Finance, donde las transacciones pueden no seguir un orden particular al ser registradas.   
-MergeSort es la mejor opción para Wise Finance ya que equilibra eficiencia, estabilidad, seguridad en la manipulación de datos y consistencia en el rendimiento, adaptándose bien al entorno de manejo de transacciones financieras.
 
 #### 2. Complejidad de mi arbol binario:
-*Función insertar*
-**Mejor caso (O(log n)):** El árbol está balanceado, por lo que se recorre solo hasta la mitad de los nodos en cada nivel.
-**Promedio (O(log n)):** El árbol está medianamente balanceado.
-**Peor caso (O(n)):** El árbol está desbalanceado (se convierte en lista), y hay que recorrer todos los nodos.
-*Función inorden*
-**Mejor, Promedio y Peor caso (O(n)):** Se deben visitar todos los nodos del árbol en un recorrido en inorden, independientemente de su estructura.
-*Función obtenerOrdenados*
-**Mejor, Promedio y Peor caso (O(n)):** Similar a inorden, recorre todo el árbol para almacenar los valores en un vector.
+*Función insertar*   
+**Mejor caso (O(log n)):** El árbol está balanceado, por lo que se recorre solo hasta la mitad de los nodos en cada nivel.   
+**Promedio (O(log n)):** El árbol está medianamente balanceado.   
+**Peor caso (O(n)):** El árbol está desbalanceado (se convierte en lista), y hay que recorrer todos los nodos.   
+*Función inorden*   
+**Mejor, Promedio y Peor caso (O(n)):** Se deben visitar todos los nodos del árbol en un recorrido en inorden, independientemente de su estructura.   
+*Función obtenerOrdenados*   
+**Mejor, Promedio y Peor caso (O(n)):** Similar a inorden, recorre todo el árbol para almacenar los valores en un vector.   
 
 #### Complejidad de las funciones de mi programa :rocket:  
 #### 1.	La complejidad al hacer el registro de transacciones y el uso de mi lista
