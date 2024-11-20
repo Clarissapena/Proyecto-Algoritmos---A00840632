@@ -23,12 +23,26 @@ El sistema de Wise Finance proporciona un resumen financiero que clasifica los g
 **Cálculo del porcentaje por categoría:** Para cada categoría de gasto (como alimentación, transporte, entretenimiento, etc.), se suman todos los montos de las transacciones asociadas. Luego, se calcula el porcentaje de gasto dividiendo el total de cada categoría entre el total de todos los gastos y multiplicando por 100.   
 **Visualización del resumen:** Aunque en esta primera fase el sistema solo muestra los porcentajes en formato de texto, el plan es implementar una visualización gráfica en fases futuras. Las gráficas ayudarán a los usuarios a comprender mejor la distribución de sus gastos. Se prevé el uso de gráficas de barras o gráficas de pastel para mostrar de manera clara y visual qué proporción del presupuesto se gasta en cada categoría.
 
-## Desarrollo de competencias
+## Desarrollo de competencias :sparkles:  
 
-### SICT0301: Evalúa los componentes
+### SICT0301: Evalúa los componentes------------------------------------------------------------------------------
 #### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
 Aquí veremos la complejidad de las funcionalidades más importantes de mi proyecto :)
-#### 1.	La complejidad al hacer el registro de transacciones y el uso de mi lista
+#### Complejidad de mi estructura de datos
+#### 1. Complejidad de mi arbol binario:
+La inserción en un árbol binario de búsqueda tiene una complejidad de O(log n) en el mejor de los casos (cuando el árbol está balanceado). Sin embargo, si el árbol se desbalancea, la complejidad podría llegar a ser O(n). En el peor caso, cuando el árbol se convierte en una lista enlazada, cada inserción puede tomar O(n).   
+**Recorrido inorden (obtenerOrdenados)**: El recorrido inorden de un árbol binario tiene una complejidad de O(n), donde n es el número de nodos (en este caso, el número de categorías o subcategorías). Esto es porque cada nodo del árbol se visita exactamente una vez durante el recorrido.  
+
+#### 2.	Complejidad de Mergesort (Mi algoritmo de ordenamiento)
+*Complejidad de ordenamiento:*   
+Mejor, promedio y peor caso: *O(n log n)*, MergeSort siempre realiza las operaciones de división y combinación de manera constante, independientemente de la disposición inicial de los datos.   
+Elección del algoritmo de ordedamiento:   
+MergeSort tiene una complejidad temporal de *O(n log n)* en el mejor, promedio y peor caso, lo cual es particularmente útil en aplicaciones de finanzas personales, donde el número de transacciones puede crecer considerablemente. Esta eficiencia garantiza que el rendimiento del sistema se mantenga estable incluso con volúmenes elevados de datos.
+A diferencia de algoritmos como QuickSort, cuyo rendimiento puede degradarse en conjuntos de datos que están casi ordenados o presentan un patrón específico, MergeSort mantiene su eficiencia sin importar la disposición inicial de los datos. Esto es útil en Wise Finance, donde las transacciones pueden no seguir un orden particular al ser registradas.   
+MergeSort es la mejor opción para Wise Finance ya que equilibra eficiencia, estabilidad, seguridad en la manipulación de datos y consistencia en el rendimiento, adaptándose bien al entorno de manejo de transacciones financieras.
+
+#### Complejidad de las funciones de mi programa
+#### 2.	La complejidad al hacer el registro de transacciones y el uso de mi lista
 Lectura del archivo:   
 El bucle while (std::getline(inputFile, line)) recorre el archivo línea por línea.   
 La complejidad total del proceso (lectura) a O(n log n) en la práctica.
@@ -38,13 +52,6 @@ Mejor caso: *O(1)*, ya que se agrega la transacción al final de la lista sin ne
 Caso promedio y peor caso: *O(1)*, la operación de inserción es constante, ya que siempre se realiza en la misma posición.   
 *Acceso a transacciones (viewTransactions)*     
 Complejidad: *O(n)*, ya que en todos los casos se recorre la lista de transacciones para mostrar cada elemento.
-#### 2.	Ordenamiento de transacciones (MergeSort)
-*Complejidad de ordenamiento:*   
-Mejor, promedio y peor caso: *O(n log n)*, MergeSort siempre realiza las operaciones de división y combinación de manera constante, independientemente de la disposición inicial de los datos.   
-Elección del algoritmo de ordedamiento:   
-MergeSort tiene una complejidad temporal de *O(n log n)* en el mejor, promedio y peor caso, lo cual es particularmente útil en aplicaciones de finanzas personales, donde el número de transacciones puede crecer considerablemente. Esta eficiencia garantiza que el rendimiento del sistema se mantenga estable incluso con volúmenes elevados de datos.
-A diferencia de algoritmos como QuickSort, cuyo rendimiento puede degradarse en conjuntos de datos que están casi ordenados o presentan un patrón específico, MergeSort mantiene su eficiencia sin importar la disposición inicial de los datos. Esto es útil en Wise Finance, donde las transacciones pueden no seguir un orden particular al ser registradas.   
-MergeSort es la mejor opción para Wise Finance ya que equilibra eficiencia, estabilidad, seguridad en la manipulación de datos y consistencia en el rendimiento, adaptándose bien al entorno de manejo de transacciones financieras.
 #### 3.	La complejidad de mi clase Meta
 *Cálculo de acumulado (calcularAcumulado)*   
 Complejidad: *O(m)*, donde m es el número de transacciones. La función recorre todas las transacciones para calcular el monto acumulado para una meta específica.   
@@ -55,9 +62,6 @@ Complejidad: *O(1)*, cada uno de estos métodos retorna un valor sin procesamien
 #### 4.	Visualización de transacciones ordenadas
 *Impresión de lista (printSortedTransactions)*   
 Complejidad: *O(n)*, recorre toda la lista de transacciones para imprimir cada elemento. 
-#### 5. Complejidad de mi arbol binario:
-La inserción en un árbol binario de búsqueda tiene una complejidad de O(log n) en el mejor de los casos (cuando el árbol está balanceado). Sin embargo, si el árbol se desbalancea, la complejidad podría llegar a ser O(n). En el peor caso, cuando el árbol se convierte en una lista enlazada, cada inserción puede tomar O(n).   
-**Recorrido inorden (obtenerOrdenados)**: El recorrido inorden de un árbol binario tiene una complejidad de O(n), donde n es el número de nodos (en este caso, el número de categorías o subcategorías). Esto es porque cada nodo del árbol se visita exactamente una vez durante el recorrido.   
 
 #### 6.	Complejidad global del programa
 La complejidad general del programa está dominada por las operaciones de ordenamiento y el cálculo del acumulado para las metas. La complejidad final, considerando el flujo completo, es *O(n log n + m)*, siendo n el número de transacciones y m el número de transacciones relacionadas con metas en el cálculo del acumulado.
