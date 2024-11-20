@@ -114,7 +114,7 @@ Línea 35: ArbolTransacciones arbol; - Se crea una instancia del árbol binario.
 Línea 37: arbol.insertar(t.categoria); - Las categorías de las transacciones se insertan en el árbol.   
 Línea 40: arbol.obtenerOrdenados(categoriasOrdenadas); - Después de insertar las categorías, se obtienen las categorías ordenadas mediante un recorrido inorden.    
 
-### SICT0303: Implementa acciones científicas
+### SICT0303: Implementa acciones científicas-----------------------------------------------------------------------
 *Implementa mecanismos para consultar información de las estructras correctos.* :question:    
 
 En mi código, los mecanismos para consultar información de mi estructura de datos están relacionado principalmente con la función que recorren el árbol y obtienen valores.
