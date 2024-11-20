@@ -64,7 +64,7 @@ Complejidad: *O(1)*, cada uno de estos métodos retorna un valor sin procesamien
 *Impresión de lista (printSortedTransactions)*   
 Complejidad: *O(n)*, recorre toda la lista de transacciones para imprimir cada elemento. 
 
-#### 6.	Complejidad global del programa
+### Complejidad global del programa
 La complejidad general del programa está dominada por las operaciones de ordenamiento y el cálculo del acumulado para las metas. La complejidad final, considerando el flujo completo, es *O(n log n + m)*, siendo n el número de transacciones y m el número de transacciones relacionadas con metas en el cálculo del acumulado.
 
 
