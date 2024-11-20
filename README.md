@@ -25,7 +25,8 @@ El sistema de Wise Finance proporciona un resumen financiero que clasifica los g
 
 ## Desarrollo de competencias :sparkles:  
 
-### SICT0301: Evalúa los componentes------------------------------------------------------------------------------
+### SICT0301: Evalúa los componentes-----------------------------------------------------------------------------------------------
+
 #### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
 Aquí veremos la complejidad de las funcionalidades más importantes de mi proyecto :)
 #### Complejidad de mi estructura de datos
