@@ -69,9 +69,19 @@ Complejidad: *O(m)*, donde m es el número de transacciones. La función recorre
 Complejidad: *O(1)*, ya que esta función realiza una operación de resta y comparación constante, sin bucles o estructuras adicionales.   
 *Obtener información de la meta (getDescripcion, getMontoObjetivo)*      
 Complejidad: *O(1)*, cada uno de estos métodos retorna un valor sin procesamiento adicional.
-#### 3.	Visualización de transacciones ordenadas
-*Impresión de lista (printSortedTransactions)*   
-Complejidad: *O(n)*, recorre toda la lista de transacciones para imprimir cada elemento. 
+#### 3.	La complejidad de las funciones del main 
+  >>>*Función calcularSaldo*   
+Complejidad: O(n), donde n es el número de transacciones. La función recorre todas las transacciones una sola vez, sumando o restando el monto dependiendo del tipo de transacción. Su complejidad es lineal con respecto al número de transacciones.   
+  >>>*Función obtenerAnio*   
+Complejidad: O(1), ya que se realiza una operación constante para extraer el año de la fecha.   
+  >>>*Función obtenerMes*   
+Complejidad: O(1), similar a obtenerAnio, se realiza una operación constante para extraer el mes de la fecha.   
+  >>>*Función visualizarIngresos*   
+Complejidad: O(n log n), donde n es el número de transacciones.   
+  >>>*Función mostrarMetas*   
+Complejidad: O(m * n), donde m es el número de metas y n es el número de transacciones. Para cada meta, se calcula el acumulado utilizando la función calcularAcumulado de la clase Meta, lo que tiene una complejidad de O(n). Por lo tanto, la complejidad total de esta función es O(m * n), ya que se debe recorrer todas las transacciones para cada meta.
+  >>>*Función generarReporteAnual*   
+Complejidad: O(n), donde n es el número de transacciones.   
 
 #### Complejidad global del programa :robot:  
 La complejidad general del programa está dominada por las operaciones de ordenamiento y el cálculo del acumulado para las metas. La complejidad final, considerando el flujo completo, es *O(n log n + m)*, siendo n el número de transacciones y m el número de transacciones relacionadas con metas en el cálculo del acumulado.
