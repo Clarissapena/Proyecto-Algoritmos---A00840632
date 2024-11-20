@@ -119,7 +119,8 @@ Utilicé una estructura de lista estándar para almacenar las transacciones de i
  
 
 ### SICT0303: Implementa acciones científicas
-*Implementa mecanismos para consultar información de las estructras correctos.* :question:
+*Implementa mecanismos para consultar información de las estructras correctos.* :question:    
+
 En mi código, los mecanismos para consultar información de mi estructura de datos están relacionado principalmente con la función que recorren el árbol y obtienen valores.
 *Inorden (recorrido en orden):*   
 **Mecanismo:** Esta función imprime los valores del árbol en orden ascendente, siguiendo un recorrido de tipo inorden (izquierda, nodo, derecha). Se hace una llamada recursiva a inordenRecursivo(), que recorre el árbol de manera recursiva y imprime los valores.
