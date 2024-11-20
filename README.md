@@ -27,7 +27,6 @@ El sistema de Wise Finance proporciona un resumen financiero que clasifica los g
 
 ### SICT0301: Evalúa los componentes-----------------------------------------------------------------------
 *Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.*:question:
-*Aquí veremos la complejidad de las funcionalidades más importantes de mi proyecto :)*
 
 #### Complejidad de mi algoritmo y estructura de datos :rocket:  
 #### 1.	Complejidad de Mergesort (Mi algoritmo de ordenamiento)
@@ -70,17 +69,17 @@ Complejidad: *O(1)*, ya que esta función realiza una operación de resta y comp
 *Obtener información de la meta (getDescripcion, getMontoObjetivo)*      
 Complejidad: *O(1)*, cada uno de estos métodos retorna un valor sin procesamiento adicional.
 #### 3.	La complejidad de las funciones del main 
-  >>>*Función calcularSaldo*   
+*Función calcularSaldo*   
 Complejidad: O(n), donde n es el número de transacciones. La función recorre todas las transacciones una sola vez, sumando o restando el monto dependiendo del tipo de transacción. Su complejidad es lineal con respecto al número de transacciones.   
-  >>>*Función obtenerAnio*   
+*Función obtenerAnio*   
 Complejidad: O(1), ya que se realiza una operación constante para extraer el año de la fecha.   
-  >>>*Función obtenerMes*   
+*Función obtenerMes*   
 Complejidad: O(1), similar a obtenerAnio, se realiza una operación constante para extraer el mes de la fecha.   
-  >>>*Función visualizarIngresos*   
+*Función visualizarIngresos*   
 Complejidad: O(n log n), donde n es el número de transacciones.   
-  >>>*Función mostrarMetas*   
+*Función mostrarMetas*   
 Complejidad: O(m * n), donde m es el número de metas y n es el número de transacciones. Para cada meta, se calcula el acumulado utilizando la función calcularAcumulado de la clase Meta, lo que tiene una complejidad de O(n). Por lo tanto, la complejidad total de esta función es O(m * n), ya que se debe recorrer todas las transacciones para cada meta.
-  >>>*Función generarReporteAnual*   
+*Función generarReporteAnual*   
 Complejidad: O(n), donde n es el número de transacciones.   
 
 #### Complejidad global del programa :robot:  
