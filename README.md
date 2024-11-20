@@ -89,7 +89,7 @@ La complejidad general del programa está dominada por las operaciones de ordena
 ### SICT0302: Toma decisiones-------------------------------------------------------------------
 *Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.* :question:
 #### Mi algoritmo de ordenamiento :rocket:
-Para ordenar las transacciones de manera eficiente, se seleccionó el algoritmo MergeSort. Este algoritmo es adecuado para Wise Finance ya que me proporciona un ordenamiento con una complejidad de O(n log n), independientemente de la disposición inicial de las transacciones. Las implementaciones del algoritmo se encuentran en el archivo mergesort.h.   
+Para ordenar las transacciones de manera eficiente, se seleccionó el algoritmo MergeSort. Este algoritmo es adecuado para Wise Finance ya que me proporciona un ordenamiento con una complejidad de O(n log n), independientemente de la disposición inicial de las transacciones. Su complejidad O(n log n) asegura un rendimiento consistente sin importar grandes volúmenes de datos. Las implementaciones del algoritmo se encuentran en el archivo mergesort.h.   
 ##### Llamada a MergeSort para ordenar las transacciones, en la línea 452 del main, donde se ordenan las transacciones antes de mostrarlas:
 mergeSort(transacciones, 0, transacciones.size() - 1);
 ##### Además, el ordenamiento para visualizar ingresos se realiza en Línea 382 dentro de la función visualizarIngresos:
