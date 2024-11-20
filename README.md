@@ -112,12 +112,7 @@ Esto se encuentra en las líneas del código del main: 90 - 135
 *Líneas donde se usa el árbol:*   
 Línea 35: ArbolTransacciones arbol; - Se crea una instancia del árbol binario.   
 Línea 37: arbol.insertar(t.categoria); - Las categorías de las transacciones se insertan en el árbol.   
-Línea 40: arbol.obtenerOrdenados(categoriasOrdenadas); - Después de insertar las categorías, se obtienen las categorías ordenadas mediante un recorrido inorden.   
-##### Obtener subcategorías únicas ordenadas (obtenerSubcategorias):
-*Líneas donde se usa el árbol:*   
-Línea 44: ArbolTransacciones arbol; - Se crea una nueva instancia del árbol binario.   
-Línea 46: arbol.insertar(t.subcategoria); - Se insertan las subcategorías de las transacciones en el árbol.   
-Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las subcategorías ordenadas mediante el recorrido inorden.     
+Línea 40: arbol.obtenerOrdenados(categoriasOrdenadas); - Después de insertar las categorías, se obtienen las categorías ordenadas mediante un recorrido inorden.    
 
 ### SICT0303: Implementa acciones científicas
 *Implementa mecanismos para consultar información de las estructras correctos.* :question:    
@@ -137,36 +132,14 @@ Las funciones leerDatos y leerMetas leen datos desde archivos para cargarlos. Am
 En el caso del Arbolbinario funciona de la siguiente manera:   
 La lectura de las transacciones se hace a través de las funciones obtenerCategorias y obtenerSubcategorias.   
 Estas funciones reciben un vector de transacciones, iteran sobre ellas y insertan las categorías o subcategorías en un árbol binario. 
+Y en el caso de MergeSort, la lectura de las transacciones en este caso se realiza en la función visualizarIngresos, donde primero se filtran las transacciones de tipo "ingreso" y se almacenan en un vector llamado ingresos. Luego, el vector de ingresos es ordenado usando el algoritmo de MergeSort. La función mergeSort es llamada con el vector de transacciones, y divide recursivamente el vector en mitades más pequeñas para luego combinar las mitades de manera ordenada utilizando la función merge.
 
-Y en el caso de MergeSort:   
-La lectura de las transacciones en este caso se realiza en la función visualizarIngresos, donde primero se filtran las transacciones de tipo "ingreso" y se almacenan en un vector llamado ingresos.
-Luego, el vector de ingresos es ordenado usando el algoritmo de MergeSort. La función mergeSort es llamada con el vector de transacciones, y divide recursivamente el vector en mitades más pequeñas para luego combinar las mitades de manera ordenada utilizando la función merge.
-
-El árbol binario que se utiliza en el código es una estructura de datos para almacenar valores de tipo std::string (en este caso, categorías y subcategorías de las transacciones) de manera ordenada. Este árbol permite realizar operaciones de inserción y recorrido en orden, que son útiles para manejar los datos de forma eficiente.
 
 *Implementa mecanismos de escritura de archivos para guardar los datos de las estructuras de manera correcta* :question:
 #### Mi escritura de archivos: 
 En términos de escritura de archivos, se está utilizando la clase std::ofstream para generar un reporte anual de gastos e ingresos.   
 Primero, necesité una función que filtra los ingresos y los ordena antes de escribirlos en el archivo.
 Esto se puede ver mostrado de la 327 - 361
-Ahora, el código recorre el vector gastos, que contiene todas las transacciones filtradas y ordenadas, y escribe la información de cada transacción en el archivo.
+Ahora, el código recorre el vector gastos, que contiene todas las transacciones filtradas y ordenadas, y escribe la información de cada transacción en el archivo.    
 
-#### Conclusiones
-**1. Análisis y selección de algoritmos adecuados**      
-Uno de los principales aspectos de este proyecto ha sido la elección de algoritmos de ordenamiento eficientes, como MergeSort, que garantizan una buena gestión de grandes volúmenes de datos, manteniendo un rendimiento estable.   
-**2. Estructuración y manejo eficiente de datos**   
-Para gestionar las categorías y subcategorías de las transacciones financieras, se optó por un árbol binario de búsqueda en lugar de otras estructuras como un std::set. La decisión de utilizar un árbol binario fue clave para garantizar flexibilidad y eficiencia al ordenar y recuperar datos, como se menciona en el análisis de complejidad de inserción y recorrido.    
-**3. Integración de diferentes métodos de entrada y salida** 
-El proyecto contempla la posibilidad de ingresar datos tanto de forma manual como desde archivos CSV. Esta funcionalidad demuestra una comprensión del manejo de datos desde diferentes fuentes, lo cual es esencial en proyectos que aspiran a ofrecer flexibilidad al usuario. Además, se ha implementado un sistema de procesamiento para validar y almacenar estos datos correctamente, garantizando que el sistema pueda manejar diferentes tipos de entradas sin afectar su rendimiento o integridad.   
-**4. Organización del proyecto y documentación**   
-El desarrollo de un buen proyecto también se refleja en la organización clara del código y la documentación adecuada. En este caso, se han seguido buenas prácticas de programación, como la separación en módulos y clases para organizar las funcionalidades relacionadas con transacciones y metas financieras. Además, se ha documentado cada una de las decisiones clave del proyecto, explicando el razonamiento detrás de la elección de estructuras de datos y algoritmos, lo que facilita el mantenimiento y la comprensión del sistema por parte de otros desarrolladores o usuarios avanzados.     
-
-Este proyecto de Wise Finance me ha tomado bastante tiempo y dedicación, pero me ha encantado ver cómo va tomando forma. Desde el análisis de las soluciones hasta la implementación de funciones, me he esforzado en cada detalle. He tenido que tomar decisiones importantes sobre qué estructuras de datos y algoritmos usar, y aunque fue un reto, estoy orgullosa del resultado. Siento que el proyecto no solo funciona bien, sino que además es claro y útil para el usuario final, lo cual es muy gratificante.
-
-
-
-
-
-
-
-
+✨ 🌟 💫 Este proyecto de Wise Finance me ha tomado bastante tiempo y dedicación, pero me ha encantado ver cómo va tomando forma. Desde el análisis de las soluciones hasta la implementación de funciones, me he esforzado en cada detalle. He tenido que tomar decisiones importantes sobre qué estructuras de datos y algoritmos usar, y aunque fue un reto, estoy orgullosa del resultado. Siento que el proyecto no solo funciona bien, sino que además es claro y útil para el usuario final, lo cual es muy gratificante. ✨ 🌟 💫
