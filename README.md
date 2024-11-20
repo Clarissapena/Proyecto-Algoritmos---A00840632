@@ -26,15 +26,11 @@ El sistema de Wise Finance proporciona un resumen financiero que clasifica los g
 ## Desarrollo de competencias :sparkles:  
 
 ### SICT0301: Evalúa los componentes-----------------------------------------------------------------------
+*Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.*:question:
+*Aquí veremos la complejidad de las funcionalidades más importantes de mi proyecto :)*
 
-#### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
-Aquí veremos la complejidad de las funcionalidades más importantes de mi proyecto :)
-#### Complejidad de mi estructura de datos :rocket:  
-#### 1. Complejidad de mi arbol binario:
-La inserción en un árbol binario de búsqueda tiene una complejidad de O(log n) en el mejor de los casos (cuando el árbol está balanceado). Sin embargo, si el árbol se desbalancea, la complejidad podría llegar a ser O(n). En el peor caso, cuando el árbol se convierte en una lista enlazada, cada inserción puede tomar O(n).   
-**Recorrido inorden (obtenerOrdenados)**: El recorrido inorden de un árbol binario tiene una complejidad de O(n), donde n es el número de nodos (en este caso, el número de categorías o subcategorías). Esto es porque cada nodo del árbol se visita exactamente una vez durante el recorrido.  
-
-#### 2.	Complejidad de Mergesort (Mi algoritmo de ordenamiento)
+#### Complejidad de mi algoritmo y estructura de datos :rocket:  
+#### 1.	Complejidad de Mergesort (Mi algoritmo de ordenamiento)
 *Complejidad de ordenamiento:*   
 Mejor, promedio y peor caso: *O(n log n)*, MergeSort siempre realiza las operaciones de división y combinación de manera constante, independientemente de la disposición inicial de los datos.   
 Elección del algoritmo de ordedamiento:   
@@ -42,8 +38,12 @@ MergeSort tiene una complejidad temporal de *O(n log n)* en el mejor, promedio y
 A diferencia de algoritmos como QuickSort, cuyo rendimiento puede degradarse en conjuntos de datos que están casi ordenados o presentan un patrón específico, MergeSort mantiene su eficiencia sin importar la disposición inicial de los datos. Esto es útil en Wise Finance, donde las transacciones pueden no seguir un orden particular al ser registradas.   
 MergeSort es la mejor opción para Wise Finance ya que equilibra eficiencia, estabilidad, seguridad en la manipulación de datos y consistencia en el rendimiento, adaptándose bien al entorno de manejo de transacciones financieras.
 
+#### 2. Complejidad de mi arbol binario:
+La inserción en un árbol binario de búsqueda tiene una complejidad de O(log n) en el mejor de los casos (cuando el árbol está balanceado). Sin embargo, si el árbol se desbalancea, la complejidad podría llegar a ser O(n). En el peor caso, cuando el árbol se convierte en una lista enlazada, cada inserción puede tomar O(n).   
+**Recorrido inorden (obtenerOrdenados)**: El recorrido inorden de un árbol binario tiene una complejidad de O(n), donde n es el número de nodos (en este caso, el número de categorías o subcategorías). Esto es porque cada nodo del árbol se visita exactamente una vez durante el recorrido.  
+
 #### Complejidad de las funciones de mi programa :rocket:  
-#### 2.	La complejidad al hacer el registro de transacciones y el uso de mi lista
+#### 1.	La complejidad al hacer el registro de transacciones y el uso de mi lista
 Lectura del archivo:   
 El bucle while (std::getline(inputFile, line)) recorre el archivo línea por línea.   
 La complejidad total del proceso (lectura) a O(n log n) en la práctica.
@@ -53,44 +53,32 @@ Mejor caso: *O(1)*, ya que se agrega la transacción al final de la lista sin ne
 Caso promedio y peor caso: *O(1)*, la operación de inserción es constante, ya que siempre se realiza en la misma posición.   
 *Acceso a transacciones (viewTransactions)*     
 Complejidad: *O(n)*, ya que en todos los casos se recorre la lista de transacciones para mostrar cada elemento.
-#### 3.	La complejidad de mi clase Meta
+#### 2.	La complejidad de mi clase Meta
 *Cálculo de acumulado (calcularAcumulado)*   
 Complejidad: *O(m)*, donde m es el número de transacciones. La función recorre todas las transacciones para calcular el monto acumulado para una meta específica.   
 *Cálculo de restante (calcularRestante)*   
 Complejidad: *O(1)*, ya que esta función realiza una operación de resta y comparación constante, sin bucles o estructuras adicionales.   
 *Obtener información de la meta (getDescripcion, getMontoObjetivo)*      
 Complejidad: *O(1)*, cada uno de estos métodos retorna un valor sin procesamiento adicional.
-#### 4.	Visualización de transacciones ordenadas
+#### 3.	Visualización de transacciones ordenadas
 *Impresión de lista (printSortedTransactions)*   
 Complejidad: *O(n)*, recorre toda la lista de transacciones para imprimir cada elemento. 
 
-### Complejidad global del programa :robot:  
+#### Complejidad global del programa :robot:  
 La complejidad general del programa está dominada por las operaciones de ordenamiento y el cálculo del acumulado para las metas. La complejidad final, considerando el flujo completo, es *O(n log n + m)*, siendo n el número de transacciones y m el número de transacciones relacionadas con metas en el cálculo del acumulado.
 
 
 ### SICT0302: Toma decisiones-------------------------------------------------------------------
-<span style="color:red"> Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.</span>
-#### Mi algoritmo de ordenamiento>>>>>>>>>>>>
+*Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.* :question:
+#### Mi algoritmo de ordenamiento :rocket:
 Para ordenar las transacciones de manera eficiente, se seleccionó el algoritmo MergeSort. Este algoritmo es adecuado para Wise Finance ya que me proporciona un ordenamiento con una complejidad de O(n log n), independientemente de la disposición inicial de las transacciones. Las implementaciones del algoritmo se encuentran en el archivo mergesort.h.   
 ##### Llamada a MergeSort para ordenar las transacciones, en la línea 452 del main, donde se ordenan las transacciones antes de mostrarlas:
 mergeSort(transacciones, 0, transacciones.size() - 1);
 ##### Además, el ordenamiento para visualizar ingresos se realiza en Línea 382 dentro de la función visualizarIngresos:
 mergeSort(ingresos, 0, ingresos.size() - 1);   
 
-#### Mi lista estándar para almacenar las transacciones
-Utilicé una estructura de lista estándar para almacenar las transacciones de ingresos y gastos. Esta lista permite agregar transacciones en el orden en que son registradas y acceder a ellas en secuencia para su análisis y visualización. La estructura es adecuada para almacenar transacciones debido a su flexibilidad y facilidad de manipulación, ya que la adición y el acceso a los datos financieros se realizan en tiempo constante, O(1). Las funciones de inserción y visualización de transacciones se encuentran en el archivo main.cpp en las líneas correspondientes.
-##### Líneas relevantes:   
-##### std::vector<Transaccion> transacciones; (Línea 16): Aquí se declara la lista de transacciones.   
-##### transacciones.push_back(t); (Líneas 28-33): Se insertan las transacciones en la lista.   
-
-#### Mi clase para manejar las metas financieras
-Para la gestión de metas de ahorro, se implementó la clase Meta, que organiza cada meta como un objeto separado con propiedades de descripción, monto objetivo y monto acumulado. Esta clase permite calcular el progreso de cada meta a partir de las transacciones asociadas, brindando una manera clara y estructurada de manejar y actualizar el avance de las metas. La clase Meta y sus métodos para calcular el acumulado y el monto restante se encuentran en meta.h.
-##### Líneas relevantes en meta.h:   
-##### Meta(const std::string& desc, double monto, const std::string& cat) (Línea 18): Constructor de la clase Meta.   
-##### double calcularAcumulado(const std::vector<Transaccion>& transacciones) (Líneas 23-29): Método que calcula el monto acumulado.   
-##### double calcularRestante() const (Líneas 31-35): Método que calcula el monto restante de la meta.   
-
-#### Ordenamineto de las transacciones por categoría
+*Selecciona una estructura de datos adecuada al problema y la usa correctamente.* :question:
+#### Mi estructura de datos :rocket:
 Utilicé un árbol binario (ArbolTransacciones) para almacenar y ordenar categorías y subcategorías es un enfoque eficaz para garantizar la unicidad y la fácil navegación.
 Mi árbol contiene lo siguiente:   
 Cada nodo del árbol contiene:   
@@ -112,9 +100,20 @@ Línea 40: arbol.obtenerOrdenados(categoriasOrdenadas); - Después de insertar l
 *Líneas donde se usa el árbol:*   
 Línea 44: ArbolTransacciones arbol; - Se crea una nueva instancia del árbol binario.   
 Línea 46: arbol.insertar(t.subcategoria); - Se insertan las subcategorías de las transacciones en el árbol.   
-Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las subcategorías ordenadas mediante el recorrido inorden.   
+Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las subcategorías ordenadas mediante el recorrido inorden.  
+
+#### Mi lista estándar para almacenar las transacciones :rocket:
+Utilicé una estructura de lista estándar para almacenar las transacciones de ingresos y gastos. Esta lista permite agregar transacciones en el orden en que son registradas y acceder a ellas en secuencia para su análisis y visualización. La estructura es adecuada para almacenar transacciones debido a su flexibilidad y facilidad de manipulación, ya que la adición y el acceso a los datos financieros se realizan en tiempo constante, O(1). Las funciones de inserción y visualización de transacciones se encuentran en el archivo main.cpp en las líneas correspondientes.
+##### Líneas relevantes:   
+##### std::vector<Transaccion> transacciones; (Línea 16): Aquí se declara la lista de transacciones.   
+##### transacciones.push_back(t); (Líneas 28-33): Se insertan las transacciones en la lista.     
+ 
 
 ### SICT0303: Implementa acciones científicas
+*Implementa mecanismos para consultar información de las estructras correctos.* :question:
+
+
+*Implementa mecanismos de lectura de archivos para cargar datos a las estructuras de manera correcta.* :question:
 #### Mi lectura de archivos
 Decicí utilizar un vector para almacenar las transacciones porque es una solución simple y clara. Los vectores son fáciles de usar y proporcionan un acceso rápido y eficiente a los elementos, lo que hace que el código sea más legible y fácil de mantener. Esto se puede ver en las líneas 13 a 88 del archivo main.cpp. 
 Las funciones leerDatos y leerMetas leen datos desde archivos para cargarlos. Ambas funciones abren un archivo en modo lectura y leen línea por línea. En leerDatos, se extraen y convierten los valores de las transacciones (como monto, categoría y fecha) y se almacenan en un vector de objetos Transaccion. En leerMetas, se procesan las metas de ahorro (como descripción, monto objetivo y categoría) y se almacenan en un vector de objetos Meta. Los datos se dividen usando un delimitador (como la coma) y se convierten a los tipos adecuados. Estas funciones permiten persistir los datos entre ejecuciones del programa.
@@ -126,6 +125,8 @@ La lectura de las transacciones en este caso se realiza en la función visualiza
 Luego, el vector de ingresos es ordenado usando el algoritmo de MergeSort. La función mergeSort es llamada con el vector de transacciones, y divide recursivamente el vector en mitades más pequeñas para luego combinar las mitades de manera ordenada utilizando la función merge.
 #### Uso y Funcionamiento del Árbol Binario en el Código
 El árbol binario que se utiliza en el código es una estructura de datos para almacenar valores de tipo std::string (en este caso, categorías y subcategorías de las transacciones) de manera ordenada. Este árbol permite realizar operaciones de inserción y recorrido en orden, que son útiles para manejar los datos de forma eficiente.
+
+*Implementa mecanismos de escritura de archivos para guardar los datos de las estructuras de manera correcta* :question:
 #### Mi escritura de archivos: 
 En términos de escritura de archivos, se está utilizando la clase std::ofstream para generar un reporte anual de gastos e ingresos.   
 Primero, necesité una función que filtra los ingresos y los ordena antes de escribirlos en el archivo.
