@@ -29,7 +29,7 @@ El sistema de Wise Finance proporciona un resumen financiero que clasifica los g
 
 #### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
 Aquí veremos la complejidad de las funcionalidades más importantes de mi proyecto :)
-#### Complejidad de mi estructura de datos
+#### Complejidad de mi estructura de datos :rocket:  
 #### 1. Complejidad de mi arbol binario:
 La inserción en un árbol binario de búsqueda tiene una complejidad de O(log n) en el mejor de los casos (cuando el árbol está balanceado). Sin embargo, si el árbol se desbalancea, la complejidad podría llegar a ser O(n). En el peor caso, cuando el árbol se convierte en una lista enlazada, cada inserción puede tomar O(n).   
 **Recorrido inorden (obtenerOrdenados)**: El recorrido inorden de un árbol binario tiene una complejidad de O(n), donde n es el número de nodos (en este caso, el número de categorías o subcategorías). Esto es porque cada nodo del árbol se visita exactamente una vez durante el recorrido.  
@@ -42,7 +42,7 @@ MergeSort tiene una complejidad temporal de *O(n log n)* en el mejor, promedio y
 A diferencia de algoritmos como QuickSort, cuyo rendimiento puede degradarse en conjuntos de datos que están casi ordenados o presentan un patrón específico, MergeSort mantiene su eficiencia sin importar la disposición inicial de los datos. Esto es útil en Wise Finance, donde las transacciones pueden no seguir un orden particular al ser registradas.   
 MergeSort es la mejor opción para Wise Finance ya que equilibra eficiencia, estabilidad, seguridad en la manipulación de datos y consistencia en el rendimiento, adaptándose bien al entorno de manejo de transacciones financieras.
 
-#### Complejidad de las funciones de mi programa
+#### Complejidad de las funciones de mi programa :rocket:  
 #### 2.	La complejidad al hacer el registro de transacciones y el uso de mi lista
 Lectura del archivo:   
 El bucle while (std::getline(inputFile, line)) recorre el archivo línea por línea.   
@@ -64,12 +64,13 @@ Complejidad: *O(1)*, cada uno de estos métodos retorna un valor sin procesamien
 *Impresión de lista (printSortedTransactions)*   
 Complejidad: *O(n)*, recorre toda la lista de transacciones para imprimir cada elemento. 
 
-### Complejidad global del programa
+### Complejidad global del programa :robot:  
 La complejidad general del programa está dominada por las operaciones de ordenamiento y el cálculo del acumulado para las metas. La complejidad final, considerando el flujo completo, es *O(n log n + m)*, siendo n el número de transacciones y m el número de transacciones relacionadas con metas en el cálculo del acumulado.
 
 
-### SICT0302: Toma decisiones
-#### Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.
+### SICT0302: Toma decisiones-------------------------------------------------------------------
+<span style="color:red"> Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.</span>
+#### Mi algoritmo de ordenamiento>>>>>>>>>>>>
 Para ordenar las transacciones de manera eficiente, se seleccionó el algoritmo MergeSort. Este algoritmo es adecuado para Wise Finance ya que me proporciona un ordenamiento con una complejidad de O(n log n), independientemente de la disposición inicial de las transacciones. Las implementaciones del algoritmo se encuentran en el archivo mergesort.h.   
 ##### Llamada a MergeSort para ordenar las transacciones, en la línea 452 del main, donde se ordenan las transacciones antes de mostrarlas:
 mergeSort(transacciones, 0, transacciones.size() - 1);
