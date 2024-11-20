@@ -88,8 +88,7 @@ mergeSort(ingresos, 0, ingresos.size() - 1);
 
 *Selecciona una estructura de datos adecuada al problema y la usa correctamente.* :question:
 #### Mi estructura de datos :rocket:
-Utilicé un árbol binario (ArbolTransacciones) para almacenar y ordenar categorías y subcategorías es un enfoque eficaz para garantizar la unicidad y la fácil navegación.
-Mi árbol contiene lo siguiente:   
+Elegí utilizar un árbol binario en lugar de otras estructuras de datos debido a que la inserción en el árbol tiene una complejidad de O(log n) en el mejor caso, lo que mejora la eficiencia cuando se maneja un volumen grande de datos. Además, el recorrido inorden, con una complejidad de O(n), permite obtener las categorías y subcategorías ordenadas de manera eficiente. Comparado con listas o tablas hash, el árbol binario ofrece un balance óptimo entre búsqueda, inserción y ordenación. Mi árbol contiene lo siguiente:      
 Cada nodo del árbol contiene:   
 valor: una cadena de texto que representa la categoría o subcategoría.   
 izquierda y derecha: punteros a los nodos hijos izquierdo y derecho, respectivamente.   
@@ -109,14 +108,7 @@ Línea 40: arbol.obtenerOrdenados(categoriasOrdenadas); - Después de insertar l
 *Líneas donde se usa el árbol:*   
 Línea 44: ArbolTransacciones arbol; - Se crea una nueva instancia del árbol binario.   
 Línea 46: arbol.insertar(t.subcategoria); - Se insertan las subcategorías de las transacciones en el árbol.   
-Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las subcategorías ordenadas mediante el recorrido inorden.  
-
-#### Mi lista estándar para almacenar las transacciones :rocket:
-Utilicé una estructura de lista estándar para almacenar las transacciones de ingresos y gastos. Esta lista permite agregar transacciones en el orden en que son registradas y acceder a ellas en secuencia para su análisis y visualización. La estructura es adecuada para almacenar transacciones debido a su flexibilidad y facilidad de manipulación, ya que la adición y el acceso a los datos financieros se realizan en tiempo constante, O(1). Las funciones de inserción y visualización de transacciones se encuentran en el archivo main.cpp en las líneas correspondientes.
-##### Líneas relevantes:   
-##### std::vector<Transaccion> transacciones; (Línea 16): Aquí se declara la lista de transacciones.   
-##### transacciones.push_back(t); (Líneas 28-33): Se insertan las transacciones en la lista.     
- 
+Línea 49: arbol.obtenerOrdenados(subcategoriasOrdenadas); - Se recuperan las subcategorías ordenadas mediante el recorrido inorden.     
 
 ### SICT0303: Implementa acciones científicas
 *Implementa mecanismos para consultar información de las estructras correctos.* :question:    
@@ -135,11 +127,12 @@ Decicí utilizar un vector para almacenar las transacciones porque es una soluci
 Las funciones leerDatos y leerMetas leen datos desde archivos para cargarlos. Ambas funciones abren un archivo en modo lectura y leen línea por línea. En leerDatos, se extraen y convierten los valores de las transacciones (como monto, categoría y fecha) y se almacenan en un vector de objetos Transaccion. En leerMetas, se procesan las metas de ahorro (como descripción, monto objetivo y categoría) y se almacenan en un vector de objetos Meta. Los datos se dividen usando un delimitador (como la coma) y se convierten a los tipos adecuados. Estas funciones permiten persistir los datos entre ejecuciones del programa.
 En el caso del Arbolbinario funciona de la siguiente manera:   
 La lectura de las transacciones se hace a través de las funciones obtenerCategorias y obtenerSubcategorias.   
-Estas funciones reciben un vector de transacciones, iteran sobre ellas y insertan las categorías o subcategorías en un árbol binario.   
+Estas funciones reciben un vector de transacciones, iteran sobre ellas y insertan las categorías o subcategorías en un árbol binario. 
+
 Y en el caso de MergeSort:   
 La lectura de las transacciones en este caso se realiza en la función visualizarIngresos, donde primero se filtran las transacciones de tipo "ingreso" y se almacenan en un vector llamado ingresos.
 Luego, el vector de ingresos es ordenado usando el algoritmo de MergeSort. La función mergeSort es llamada con el vector de transacciones, y divide recursivamente el vector en mitades más pequeñas para luego combinar las mitades de manera ordenada utilizando la función merge.
-#### Uso y Funcionamiento del Árbol Binario en el Código
+
 El árbol binario que se utiliza en el código es una estructura de datos para almacenar valores de tipo std::string (en este caso, categorías y subcategorías de las transacciones) de manera ordenada. Este árbol permite realizar operaciones de inserción y recorrido en orden, que son útiles para manejar los datos de forma eficiente.
 
 *Implementa mecanismos de escritura de archivos para guardar los datos de las estructuras de manera correcta* :question:
