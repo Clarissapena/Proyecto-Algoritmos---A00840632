@@ -39,8 +39,14 @@ A diferencia de algoritmos como QuickSort, cuyo rendimiento puede degradarse en 
 MergeSort es la mejor opción para Wise Finance ya que equilibra eficiencia, estabilidad, seguridad en la manipulación de datos y consistencia en el rendimiento, adaptándose bien al entorno de manejo de transacciones financieras.
 
 #### 2. Complejidad de mi arbol binario:
-La inserción en un árbol binario de búsqueda tiene una complejidad de O(log n) en el mejor de los casos (cuando el árbol está balanceado). Sin embargo, si el árbol se desbalancea, la complejidad podría llegar a ser O(n). En el peor caso, cuando el árbol se convierte en una lista enlazada, cada inserción puede tomar O(n).   
-**Recorrido inorden (obtenerOrdenados)**: El recorrido inorden de un árbol binario tiene una complejidad de O(n), donde n es el número de nodos (en este caso, el número de categorías o subcategorías). Esto es porque cada nodo del árbol se visita exactamente una vez durante el recorrido.  
+*Función insertar*
+**Mejor caso (O(log n)):** El árbol está balanceado, por lo que se recorre solo hasta la mitad de los nodos en cada nivel.
+**Promedio (O(log n)):** El árbol está medianamente balanceado.
+**Peor caso (O(n)):** El árbol está desbalanceado (se convierte en lista), y hay que recorrer todos los nodos.
+*Función inorden*
+**Mejor, Promedio y Peor caso (O(n)):** Se deben visitar todos los nodos del árbol en un recorrido en inorden, independientemente de su estructura.
+*Función obtenerOrdenados*
+**Mejor, Promedio y Peor caso (O(n)):** Similar a inorden, recorre todo el árbol para almacenar los valores en un vector.
 
 #### Complejidad de las funciones de mi programa :rocket:  
 #### 1.	La complejidad al hacer el registro de transacciones y el uso de mi lista
